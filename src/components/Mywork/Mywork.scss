@@ -1,0 +1,92 @@
+@import "../../sass/variables.scss";
+.work--item {
+  background-color: #131319;
+  box-shadow: 0px 0px 20px -5px rgb(0 0 0 / 75%);
+  border-bottom: 1px solid $color-blue;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.work--image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 230px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 0.5rem;
+  img {
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+}
+.work--tag__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work--tag__tag {
+  display: inline-block;
+  background-color: $color-blue;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  color: $white-color;
+  min-width: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.work-img-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 2rem;
+  }
+  svg {
+    width: 50%;
+    height: 50%;
+    color: var(--white-color);
+  }
+}
+.work--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
+  color: $white-color;
+  font-size: 1.9rem;
+}
+.work--info__title {
+  font-weight: 700;
+  font-size: 2.1rem;
+  color: $color-blue;
+}
+.work--description {
+  margin-top: 1rem;
+}

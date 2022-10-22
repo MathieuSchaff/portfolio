@@ -1,0 +1,45 @@
+@import "../../sass/variables.scss";
+.work--title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10rem;
+  text-align: center;
+  span {
+    color: $color-blue;
+  }
+}
+.work--categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.work-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 3rem;
+  background-color: #151515;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+.work--category.activeItem {
+  background-color: $four-color;
+  color: #fff;
+}
+.work--category {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+  &:hover {
+    background-color: $four-color;
+    color: #fff;
+  }
+}
