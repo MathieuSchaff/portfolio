@@ -20,7 +20,6 @@ const Mywork = ({ work }) => {
           <a href={work.projectLink}>
             <motion.div
               whileInView={{ scale: [0, 1] }}
-              s
               whileHover={{ scale: [1, 0.9] }}
               transition={{ duration: 0.25 }}
               className="overlay__link"
