@@ -1,5 +1,5 @@
 @import "../../sass/variables.scss";
-.work--title {
+.work__title {
   font-size: 4rem;
   font-weight: 700;
   color: #fff;
@@ -9,14 +9,14 @@
     color: $color-blue;
   }
 }
-.work--categories {
+.work__categories {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }
-.work-container {
+.work__container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 3rem;
@@ -29,7 +29,7 @@
   background-color: $four-color;
   color: #fff;
 }
-.work--category {
+.work__category {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background-color: #fff;

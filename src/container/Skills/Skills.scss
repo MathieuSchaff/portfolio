@@ -1,17 +1,17 @@
 @import "../../sass/variables.scss";
-.app--skills {
+.skills {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 0 0 auto 0;
 }
-.head--text-span {
+.skills__span {
   font-style: italic;
   color: $color-blue;
   margin-right: 0.4rem;
 }
-.skills-container {
+.skills__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: space-between;
@@ -28,7 +28,7 @@
   flex-wrap: wrap;
 }
 
-.skills-item {
+.skills__item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,7 +55,7 @@
   }
 }
 
-.skills-item-name {
+.item__name {
   color: $white-color;
   font-weight: 700;
   margin-top: 1rem;

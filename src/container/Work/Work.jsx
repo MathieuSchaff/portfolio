@@ -40,7 +40,7 @@ const Work = () => {
   }, []);
   return (
     <div>
-      <h2 className="work--title">
+      <h2 className="work__title">
         {" "}
         My creative{" "}
         <AnimatedLetters
@@ -50,12 +50,12 @@ const Work = () => {
         />{" "}
         section
       </h2>
-      <div className="work--categories">
-        {["All", "Web Design", "Vanilla JS", "React", "Backend"].map(
+      <div className="work__categories">
+        {["All", "Web Design", "Vanilla JS", "React", "Typescript"].map(
           (category, index) => {
             return (
               <div
-                className={`work--category ${
+                className={`work__category ${
                   activeCategory === category ? "activeItem" : ""
                 }`}
                 key={index}
@@ -70,7 +70,7 @@ const Work = () => {
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="work-container"
+        className="work__container"
       >
         {filterWork.map((work) => (
           <Mywork key={work._id} work={work} />

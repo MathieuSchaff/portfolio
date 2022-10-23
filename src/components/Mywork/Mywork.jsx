@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 const Mywork = ({ work }) => {
   return (
-    <div className="work--item">
-      <div className="work--image">
-        <img src={urlFor(work.imgUrl)} alt="work" />
+    <div className="work__item">
+      <div className="work__image">
+        <img src={urlFor(work.imgUrl)} alt={`${work.title} app`} />
         <motion.div
           whileHover={{ opacity: [0, 1] }}
           transition={{
@@ -15,14 +15,15 @@ const Mywork = ({ work }) => {
             ease: "easeInOut",
             staggerChildren: 0.5,
           }}
-          className="work-img-overlay"
+          className="img__overlay"
         >
           <a href={work.projectLink}>
             <motion.div
               whileInView={{ scale: [0, 1] }}
+              s
               whileHover={{ scale: [1, 0.9] }}
               transition={{ duration: 0.25 }}
-              className="work-img-overlay-link"
+              className="overlay__link"
             >
               <AiFillEye />
             </motion.div>
@@ -32,20 +33,19 @@ const Mywork = ({ work }) => {
               whileInView={{ scale: [0, 1] }}
               whileHover={{ scale: [1, 0.9] }}
               transition={{ duration: 0.25 }}
-              className="work-img-overlay-link"
             >
               <AiFillGithub />
             </motion.div>
           </a>
         </motion.div>
       </div>
-      <div className="work--info">
-        <h3 className="work--info__title">{work.title}</h3>
-        <p className="work--description">{work.description}</p>
-        <div className="work--tag__container">
+      <div className="work__info">
+        <h3 className="info__title">{work.title}</h3>
+        <p className="work__description">{work.description}</p>
+        <div className="tag__container">
           {work.tags.map((tag, index) => {
             return (
-              <div className="work--tag__tag" key={index}>
+              <div className="tag__tag" key={index}>
                 {" "}
                 {tag}
               </div>

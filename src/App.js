@@ -1,7 +1,7 @@
 import "./App.scss";
-import { About, Skills, Contact, Work } from "./container";
+import { About, Skills, Contact, Work, NotFound } from "./container";
 import { Navbar } from "./components";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 function App() {
   return (
     <div className="App">
@@ -11,6 +11,8 @@ function App() {
         <Route path="skills" element={<Skills />} />
         <Route path="work" element={<Work />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="404" element={<NotFound />} />
+        <Route path="*" element={<Navigate replace to="/404" />} />
       </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
 @import "../../sass/variables.scss";
-.work--item {
+.work__item {
   background-color: #131319;
   box-shadow: 0px 0px 20px -5px rgb(0 0 0 / 75%);
   border-bottom: 1px solid $color-blue;
@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.work--image {
+.work__image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,13 +23,13 @@
     object-fit: cover;
   }
 }
-.work--tag__container {
+.tag__container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
 }
-.work--tag__tag {
+.tag__tag {
   display: inline-block;
   background-color: $color-blue;
   padding: 0.4rem 1rem;
@@ -39,7 +39,7 @@
   text-align: center;
   font-size: 1.5rem;
 }
-.work-img-overlay {
+.img__overlay {
   position: absolute;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@
     color: var(--white-color);
   }
 }
-.work--info {
+.work__info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,11 +82,11 @@
   color: $white-color;
   font-size: 1.9rem;
 }
-.work--info__title {
+.info__title {
   font-weight: 700;
   font-size: 2.1rem;
   color: $color-blue;
 }
-.work--description {
+.work__description {
   margin-top: 1rem;
 }

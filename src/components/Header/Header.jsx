@@ -4,27 +4,8 @@ import AnimatedLetters from "../AnimatedLetters/AnimatedLetters";
 const Header = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const nameArray = [
-    "f",
-    "r",
-    "o",
-    "n",
-    "t",
-    "-",
-    "e",
-    "n",
-    "d",
-    " ",
-    "d",
-    "e",
-    "v",
-    "e",
-    "l",
-    "o",
-    "p",
-    "e",
-    "r",
-  ];
+  const frontend = ["f", "r", "o", "n", "t", "-", "e", "n", "d"];
+  const developer = ["d", "e", "v", "e", "l", "o", "p", "e", "r"];
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
@@ -33,18 +14,35 @@ const Header = () => {
   return (
     <header id="home" className="headerContainer">
       {" "}
-      <h1 className="headerContainer__title">
+      <h1
+        className="headerContainer__title"
+        ariaLabel="portfolio of mathieu, front end developer"
+        tabIndex={0}
+      >
         <p className="headerContainer__title-text">
           I<span>'</span>m
         </p>
 
         <p>Mathieu</p>
-        <AnimatedLetters
-          letterClass={letterClass}
-          className="header--about__title"
-          strArray={nameArray}
-          idx={17}
-        />
+        <div className="animatedLetter__container">
+          <div className="animatedLetter__first animatedLetter__Block">
+            <AnimatedLetters
+              letterClass={letterClass}
+              className="header--about__title"
+              strArray={frontend}
+              idx={9}
+            />
+          </div>
+          <div className="animatedLetter__separator"></div>
+          <div className="animatedLetter__sec animatedLetter__Block">
+            <AnimatedLetters
+              letterClass={letterClass}
+              className="header--about__title"
+              strArray={developer}
+              idx={9}
+            />
+          </div>
+        </div>
       </h1>
     </header>
   );

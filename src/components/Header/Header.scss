@@ -1,4 +1,6 @@
 @import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
 .headerContainer {
   display: flex;
   justify-content: center;
@@ -23,6 +25,21 @@
   font-size: 4rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+.animatedLetter__container {
+  display: flex;
+  flex-direction: column;
+  @include respondMobileFirst(phone) {
+    flex-direction: row;
+  }
+}
+.animatedLetter__separator {
+  width: 0;
+  height: 0;
+  @include respondMobileFirst(phone) {
+    width: 20px;
+    height: 25px;
+  }
 }
 @keyframes fade-in {
   0% {

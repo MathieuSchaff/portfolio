@@ -1,5 +1,5 @@
 @import "variables";
-
+@import "mixins";
 *,
 *::before,
 *::after {
@@ -50,52 +50,60 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   &::before {
-    content: "";
-    position: fixed;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(0, 255, 255);
-    filter: blur(140px);
-    pointer-events: none;
-    z-index: -1;
+    @include respondMobileFirst(phone) {
+      content: "";
+      position: fixed;
+      height: 200px;
+      width: 200px;
+      background-color: rgb(0, 255, 255);
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: -1;
+    }
   }
   &::after {
-    content: "";
-    position: fixed;
-    top: 200px;
-    left: 250px;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(183, 0, 255);
-    filter: blur(140px);
-    pointer-events: none;
-    z-index: -1;
+    @include respondMobileFirst(phone) {
+      content: "";
+      position: fixed;
+      top: 200px;
+      left: 250px;
+      height: 200px;
+      width: 200px;
+      background-color: rgb(183, 0, 255);
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: -1;
+    }
   }
 }
 #root {
   &::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(0, 255, 255);
-    filter: blur(140px);
-    pointer-events: none;
-    z-index: -1;
+    @include respondMobileFirst(phone) {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 200px;
+      width: 200px;
+      background-color: rgb(0, 255, 255);
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: -1;
+    }
   }
   &::after {
-    content: "";
-    position: fixed;
-    top: 200px;
-    right: 250px;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(183, 0, 255);
-    filter: blur(140px);
-    pointer-events: none;
-    z-index: -1;
+    @include respondMobileFirst(phone) {
+      content: "";
+      position: fixed;
+      top: 200px;
+      right: 250px;
+      height: 200px;
+      width: 200px;
+      background-color: rgb(183, 0, 255);
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: -1;
+    }
   }
 }
 /* Make images easier to work with */

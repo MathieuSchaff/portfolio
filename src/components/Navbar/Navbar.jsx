@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiOutlineHome, AiOutlineMail } from "react-icons/ai";
 
 import { BsCodeSlash } from "react-icons/bs";
@@ -9,27 +9,27 @@ const Navbar = () => {
   return (
     <>
       <nav className="navBar" role="navigation" aria-label="Choose section">
-        <ul className="navBar__title-links">
-          <Link to="/">
-            <li className="navBar__title">
+        <ul className="navBar__ul">
+          <li className="navBar__li">
+            <NavLink to="/" role="menuitem" end>
               <AiOutlineHome className="icon" />
-            </li>
-          </Link>
-          <Link to="/skills" aria-label="Skills">
-            <li className="navBar__title">
+            </NavLink>
+          </li>
+          <li className="navBar__li">
+            <NavLink to="/skills" aria-label="Skills" role="menuitem">
               <DiReact className="icon" />
-            </li>
-          </Link>
-          <Link to="/work" aria-label="Work">
-            <li className="navBar__title">
+            </NavLink>
+          </li>
+          <li className="navBar__li">
+            <NavLink to="/work" aria-label="Work" role="menuitem">
               <BsCodeSlash className="icon" />
-            </li>
-          </Link>
-          <Link to="/contact" aria-label="contact">
-            <li className="navBar__title">
+            </NavLink>
+          </li>
+          <li className="navBar__li">
+            <NavLink to="/contact" aria-label="contact" role="menuitem">
               <AiOutlineMail className="icon" />
-            </li>
-          </Link>
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </>

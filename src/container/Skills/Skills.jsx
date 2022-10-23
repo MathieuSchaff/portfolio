@@ -16,35 +16,34 @@ const Skills = () => {
   useEffect(() => {
     const query = '*[_type == "skills"]';
     client.fetch(query).then((data) => {
-      console.log(data);
       setSkills(data);
     });
   }, []);
   return (
-    <div className="app--skills">
+    <div className="skills ">
       {" "}
-      <h2 className="head--text">
+      <h2 className=" skills__title">
         {" "}
-        <span className="head--text-span">S</span>
+        <span className="skills__span">S</span>
         <AnimatedLetters
           letterClass={letterClass}
           strArray={nameArray}
           idx={5}
         />
       </h2>
-      <motion.div className="skills-container">
+      <motion.div className="skills__container">
         {skills.map((skill, index) => {
           return (
             <motion.div
               key={index}
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
-              className="skills-item"
+              className="skills__item"
             >
-              <div className="skills-item-icon">
+              <div className="item__icon">
                 <img src={urlFor(skill.icon)} alt={skill.name} />
               </div>
-              <p className="skills-item-name">{skill.name}</p>
+              <p className="item__name">{skill.name}</p>
             </motion.div>
           );
         })}

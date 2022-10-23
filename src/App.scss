@@ -2,9 +2,9 @@
 @import "./sass/variables";
 @import "animate.css";
 .App {
-  padding: 10% 10%;
+  padding: 5% 10%;
   position: relative;
   @include respond(phone) {
-    padding: 10% 5% 30% 5%;
+    padding: 5% 5% 30% 5%;
   }
 }
