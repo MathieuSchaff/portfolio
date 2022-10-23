@@ -29,13 +29,53 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
+    <div className="contact" aria-label="Contact information">
       <form ref={form} onSubmit={sendEmail}>
-        <input placeholder="Name" type="text" name="user_name" required />
-        <input type="email" required placeholder="Email" name="user_email" />
-        <textarea name="message" required placeholder="Message" />
-        <input type="submit" value="Send" className="flat-button" />
+        <label htmlFor="username" className="label">
+          Username :
+        </label>
+        <input
+          placeholder="Name"
+          type="text"
+          id="username"
+          name="username"
+          required
+          aria-required="true"
+          aria-label="your name here"
+          aria-labelledby="username"
+        />
+        <label htmlFor="email" className="label">
+          Email :
+        </label>
+
+        <input
+          type="email"
+          required
+          placeholder="Email"
+          id="email"
+          name="email"
+          aria-required="true"
+          aria-label="your email here"
+          aria-labelledby="email"
+        />
+        <label htmlFor="message" className="label">
+          Message :
+        </label>
+        <textarea
+          name="message"
+          required
+          placeholder="Message"
+          aria-label="your message here"
+          aria-labelledby="message"
+        />
+        <input
+          id="message"
+          type="submit"
+          value="Send"
+          className="flat-button"
+        />
       </form>
+      <p>Les champs précédés d'une étoile (*) sont obligatoires</p>
     </div>
   );
 };
