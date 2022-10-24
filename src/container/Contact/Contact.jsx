@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact" aria-label="Contact information">
+    <main className="contact" aria-label="Contact information">
       <form ref={form} onSubmit={sendEmail}>
         <label htmlFor="username" className="label">
           Username :
@@ -75,8 +75,8 @@ const Contact = () => {
           className="flat-button"
         />
       </form>
-      <p>Les champs précédés d'une étoile (*) sont obligatoires</p>
-    </div>
+      {/* <p>Les champs précédés d'une étoile (*) sont obligatoires</p> */}
+    </main>
   );
 };
 

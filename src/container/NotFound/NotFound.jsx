@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="error__container">
+    <main className="error__container">
       <div className="error__main">
         <p className="error__title">404</p>
         <p>Oups! La page que vous demandez n'existe pas.</p>
@@ -14,7 +14,7 @@ const NotFound = () => {
         {" "}
         Retourner sur la page d’accueil{" "}
       </Link>
-    </div>
+    </main>
   );
 };
 

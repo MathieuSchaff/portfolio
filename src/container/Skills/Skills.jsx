@@ -31,7 +31,7 @@ const Skills = () => {
           idx={5}
         />
       </h2>
-      <motion.div className="skills__container">
+      <motion.main className="skills__container">
         {skills.map((skill, index) => {
           return (
             <motion.div
@@ -47,7 +47,7 @@ const Skills = () => {
             </motion.div>
           );
         })}
-      </motion.div>
+      </motion.main>
     </div>
   );
 };

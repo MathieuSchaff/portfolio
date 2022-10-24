@@ -49,32 +49,34 @@ const Work = () => {
         />{" "}
         section
       </h2>
-      <div className="work__categories">
-        {["All", "Web Design", "Vanilla JS", "React", "Typescript"].map(
-          (category, index) => {
-            return (
-              <div
-                className={`work__category ${
-                  activeCategory === category ? "activeItem" : ""
-                }`}
-                key={index}
-                onClick={() => handleWorkFilter(category)}
-              >
-                {category}
-              </div>
-            );
-          }
-        )}
-      </div>
-      <motion.div
-        animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="work__container"
-      >
-        {filterWork.map((work) => (
-          <Mywork key={work._id} work={work} />
-        ))}
-      </motion.div>
+      <main>
+        <div className="work__categories">
+          {["All", "Web Design", "Vanilla JS", "React", "Typescript"].map(
+            (category, index) => {
+              return (
+                <div
+                  className={`work__category ${
+                    activeCategory === category ? "activeItem" : ""
+                  }`}
+                  key={index}
+                  onClick={() => handleWorkFilter(category)}
+                >
+                  {category}
+                </div>
+              );
+            }
+          )}
+        </div>
+        <motion.div
+          animate={animateCard}
+          transition={{ duration: 0.5, delayChildren: 0.5 }}
+          className="work__container"
+        >
+          {filterWork.map((work) => (
+            <Mywork key={work._id} work={work} />
+          ))}
+        </motion.div>
+      </main>
     </div>
   );
 };
