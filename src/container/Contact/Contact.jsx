@@ -75,7 +75,7 @@ const Contact = () => {
           className="flat-button"
         />
       </form>
-      {/* <p>Les champs précédés d'une étoile (*) sont obligatoires</p> */}
+      <p>Les champs précédés d'une étoile (*) sont obligatoires</p>
     </main>
   );
 };
