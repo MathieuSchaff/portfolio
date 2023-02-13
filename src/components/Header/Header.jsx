@@ -1,49 +1,77 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Header.scss";
-import AnimatedLetters from "../AnimatedLetters/AnimatedLetters";
 const Header = () => {
-  const [letterClass, setLetterClass] = useState("text-animate");
+  const [isMenuClick, setIsMenuClicked] = React.useState(false);
 
-  const frontend = ["f", "r", "o", "n", "t", "-", "e", "n", "d"];
-  const developer = ["d", "e", "v", "e", "l", "o", "p", "e", "r"];
-  useEffect(() => {
-    setTimeout(() => {
-      setLetterClass("text-animate-hover");
-    }, 4000);
-  }, []);
+  const toggleMenu = () => {
+    setIsMenuClicked((c) => !c);
+  };
   return (
-    <header id="home" className="headerContainer">
-      {" "}
-      <h1
-        className="headerContainer__title"
-        ariaLabel="portfolio of mathieu, front end developer"
-        tabIndex={0}
-      >
-        <p className="headerContainer__title-text">
-          I<span>'</span>m
-        </p>
-
-        <p>Mathieu</p>
-        <div className="animatedLetter__container">
-          <div className="animatedLetter__first animatedLetter__Block">
-            <AnimatedLetters
-              letterClass={letterClass}
-              className="header--about__title"
-              strArray={frontend}
-              idx={9}
-            />
-          </div>
-          <div className="animatedLetter__separator"></div>
-          <div className="animatedLetter__sec animatedLetter__Block">
-            <AnimatedLetters
-              letterClass={letterClass}
-              className="header--about__title"
-              strArray={developer}
-              idx={9}
-            />
-          </div>
-        </div>
+    <header id="home" className="header">
+      <h1 aria-label="portfolio of mathieu, front end developer" tabIndex={0}>
+        {"<M/>"}
       </h1>
+      <div className={"modal-menu"}>
+        <div
+          className={isMenuClick ? "menu-open menu-open__clicked" : "menu-open"}
+          onClick={toggleMenu}
+        >
+          <div></div>
+        </div>
+        <nav
+          className={
+            isMenuClick ? "burger--nav burger--nav__clicked" : "burger--nav"
+          }
+        >
+          <ul className="burger--list">
+            <li className="burger--item">
+              <a href="#about" className="burger--link" onClick={toggleMenu}>
+                About
+              </a>
+            </li>
+            <li className="burger--item">
+              <a href="#skills" className="burger--link" onClick={toggleMenu}>
+                Skills
+              </a>
+            </li>
+            <li className="burger--item">
+              <a href="#projects" className="burger--link" onClick={toggleMenu}>
+                Projects
+              </a>
+            </li>
+            <li className="burger--item">
+              <a href="#contact" className="burger--link" onClick={toggleMenu}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav className="header--nav__main">
+        <ul className="header--nav__list">
+          <li className="header--nav__item">
+            <a href="#about" className="header--nav__link">
+              About
+            </a>
+          </li>
+          <li className="header--nav__item">
+            <a href="#skills" className="header--nav__link">
+              Skills
+            </a>
+          </li>
+          <li className="header--nav__item">
+            <a href="#projects" className="header--nav__link">
+              Projects
+            </a>
+          </li>
+          <li className="header--nav__item">
+            <a href="#contact" className="header--nav__link">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

@@ -1,13 +1,10 @@
 import "./AnimatedLetters.scss";
 
-const AnimatedLetters = ({ letterClass, strArray, idx, className }) => {
+const AnimatedLetters = ({ strArray, className }) => {
   return (
     <span className="">
       {strArray.map((char, i) => (
-        <span
-          key={char + i}
-          className={`${className} ${letterClass} _${i + idx}`}
-        >
+        <span key={char + i} className={`${className} text-animate-hover`}>
           {char}
         </span>
       ))}

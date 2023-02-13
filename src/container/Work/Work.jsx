@@ -11,7 +11,7 @@ const Work = () => {
   const [filterWork, setFilterWork] = useState([]);
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const nameArray = ["P", "o", "r", "t", "f", "o", "l", "i", "o"];
+  const nameArray = ["P", "r", "o", "j", "e", "c", "t", "s", "."];
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
@@ -38,19 +38,16 @@ const Work = () => {
     });
   }, []);
   return (
-    <div>
+    <div className="work">
       <h2 className="work__title">
-        {" "}
-        My creative{" "}
         <AnimatedLetters
           letterClass={letterClass}
           strArray={nameArray}
           idx={9}
         />{" "}
-        section
       </h2>
       <main>
-        <div className="work__categories">
+        {/* <div className="work__categories">
           {["All", "Web Design", "Vanilla JS", "React", "Typescript"].map(
             (category, index) => {
               return (
@@ -66,7 +63,7 @@ const Work = () => {
               );
             }
           )}
-        </div>
+        </div> */}
         <motion.div
           animate={animateCard}
           transition={{ duration: 0.5, delayChildren: 0.5 }}

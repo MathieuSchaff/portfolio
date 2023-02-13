@@ -1,53 +1,73 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixins.scss";
-
-.headerContainer {
+.header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  animation: fade-in 1s ease-in-out forwards;
 }
-.headerContainer__title {
-  line-height: 4rem;
 
-  &-text {
-    font-size: 3rem;
-    span {
-      color: $color-blue;
-    }
+.header--nav {
+  &__list {
+    display: flex;
+    gap: 1.5rem;
   }
 }
-.header--about__title {
-  color: $color-blue;
-  font-family: $font-secondary;
-  line-height: 6rem;
-  font-size: 4rem;
-  font-weight: 700;
-  text-transform: uppercase;
+
+.header--nav__main {
+  display: none;
+  @include respondMobileFirst(phone) {
+    display: block;
+  }
 }
-.animatedLetter__container {
+
+.menu-open {
+  display: block;
+  width: 35px;
+  cursor: pointer;
+  @include respondMobileFirst(phone) {
+    display: none;
+  }
+}
+.menu-open:before,
+.menu-open:after,
+.menu-open div {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 5px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+.menu-open__clicked:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.menu-open__clicked:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.menu-open__clicked div {
+  transform: scale(0);
+}
+.modal-menu {
+  position: relative;
+  @include respondMobileFirst(phone) {
+    display: none;
+  }
+}
+.burger--nav {
+  margin-top: 15px;
+  position: absolute;
+  display: none;
+  background-color: brown;
+  width: 200px;
+  right: 0;
+  padding: 20px;
+  border-radius: 5%;
+}
+.burger--nav__clicked {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  @include respondMobileFirst(phone) {
-    flex-direction: row;
-  }
-}
-.animatedLetter__separator {
-  width: 0;
-  height: 0;
-  @include respondMobileFirst(phone) {
-    width: 20px;
-    height: 25px;
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-200px);
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  justify-content: center;
+  align-items: center;
 }

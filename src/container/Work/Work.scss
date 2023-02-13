@@ -1,12 +1,22 @@
 @import "../../sass/variables.scss";
+.work {
+  margin: 5rem 0 1.5rem 0;
+}
 .work__title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 10rem;
   text-align: center;
+  margin: 0 auto;
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 150px;
+    background-color: $white-color;
+    margin: 0 auto;
+  }
   span {
-    color: $color-blue;
+    color: $white-color;
   }
 }
 .work__categories {
@@ -20,10 +30,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 3rem;
-  background-color: #151515;
   border-radius: 2rem;
-  padding: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .work--category.activeItem {
   background-color: $four-color;
