@@ -28,7 +28,8 @@
 }
 .work__container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, 320px);
   gap: 3rem;
   border-radius: 2rem;
   margin-top: 2rem;

@@ -10,6 +10,7 @@ function App() {
       <About />
       {/* <Skills /> */}
       <Work />
+      <Skills />
       {/* <Contact /> */}
       {/* <Routes>
         <Route path="/" element={<About />} />
