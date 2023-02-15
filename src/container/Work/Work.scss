@@ -5,16 +5,8 @@
 .work__title {
   font-size: 3rem;
   font-weight: 700;
-  text-align: center;
   margin: 0 auto;
-  &::after {
-    content: "";
-    display: block;
-    height: 2px;
-    width: 150px;
-    background-color: $white-color;
-    margin: 0 auto;
-  }
+  text-align: center;
   span {
     color: $white-color;
   }

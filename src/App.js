@@ -10,8 +10,8 @@ function App() {
       <About />
       {/* <Skills /> */}
       <Work />
-      {/* <Skills /> */}
-      {/* <Contact /> */}
+      <Skills />
+      <Contact />
       {/* <Routes>
         <Route path="/" element={<About />} />
         <Route path="skills" element={<Skills />} />

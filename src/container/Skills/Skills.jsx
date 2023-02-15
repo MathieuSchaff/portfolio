@@ -7,7 +7,7 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [letterClass, setLetterClass] = useState("text-animate");
 
-  const nameArray = ["k", "i", "l", "l", "s"];
+  const nameArray = ["S", "k", "i", "l", "l", "s"];
   useEffect(() => {
     setTimeout(() => {
       setLetterClass("text-animate-hover");
@@ -21,14 +21,11 @@ const Skills = () => {
   }, []);
   return (
     <div className="skills ">
-      {" "}
       <h2 className=" skills__title">
-        {" "}
-        <span className="skills__span">S</span>
         <AnimatedLetters
           letterClass={letterClass}
           strArray={nameArray}
-          idx={5}
+          idx={6}
         />
       </h2>
       <motion.main className="skills__container">

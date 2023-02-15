@@ -5,7 +5,11 @@ import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 const Mywork = ({ work }) => {
   return (
-    <div className="work__item">
+    <motion.div
+      whileInView={{ opacity: [0, 1] }}
+      transition={{ duration: 0.3 }}
+      className="work__item"
+    >
       <div>
         <div className="work__image">
           <img src={urlFor(work.imgUrl)} alt={`${work.title} app`} />
@@ -55,7 +59,7 @@ const Mywork = ({ work }) => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

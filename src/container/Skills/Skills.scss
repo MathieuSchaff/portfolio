@@ -5,6 +5,7 @@
   align-items: center;
   flex-direction: column;
   margin: 0 0 auto 0;
+  margin-top: 5rem;
 }
 .skills__span {
   font-style: italic;
@@ -16,10 +17,8 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-content: space-between;
   gap: 3rem;
-  background-color: #151515;
   border-radius: 2rem;
   padding: 2rem;
-  margin-top: 3rem;
   width: 100%;
 }
 
@@ -37,9 +36,10 @@
   margin: 1.5rem;
   padding: 1.5rem;
   transition: all 0.3s ease;
-  background-color: #131319;
+  background-color: $color-blueTiffany;
   box-shadow: 0px 0px 20px -5px rgb(0 0 0 / 75%);
   border-bottom: 1px solid $color-blue;
+  border-radius: 1rem;
   div {
     display: flex;
     align-items: center;

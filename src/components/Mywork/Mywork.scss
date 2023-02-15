@@ -1,4 +1,5 @@
 @import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
 .work__item {
   background-color: $color-blueTiffany;
   box-shadow: 0px 0px 20px -5px rgb(0 0 0 / 75%);
@@ -15,7 +16,6 @@
   align-items: center;
   width: 100%;
   height: 200px;
-  background-color: #fff;
   position: relative;
   border-radius: 0.5rem;
   img {
@@ -39,6 +39,9 @@
   min-width: 5rem;
   text-align: center;
   font-size: 1.5rem;
+  @include respondMobileFirst(big-desktop) {
+    font-size: 1.2rem;
+  }
 }
 .img__overlay {
   position: absolute;
@@ -86,7 +89,6 @@
 .info__title {
   font-weight: 700;
   font-size: 2.1rem;
-  color: $color-blue;
 }
 .info__description {
   margin-top: 1rem;
