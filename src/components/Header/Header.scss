@@ -4,6 +4,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  h1 {
+    font-size: 3rem;
+    color: $color-blue;
+    font-weight: 500;
+
+    @include respondMobileFirst(phone) {
+      font-size: 2rem;
+    }
+  }
 }
 
 .header--nav {

@@ -12,22 +12,22 @@
     flex-direction: row;
   }
 }
-.about__descOfMe {
+.about__welcome {
   font-size: 3rem;
 }
-.descOfMe__whoIAm {
+.welcome {
   margin-bottom: 1.5rem;
-  color: $color-blueTiffany;
   > p {
     margin-bottom: 1.5rem;
   }
 }
-.whoIAm__name {
-  font-size: 4.5rem;
+.welcome__portfolio {
+  font-size: 8rem;
   font-weight: 700;
   line-height: 5rem;
+  font-family: $font-secondary;
 }
-.about__jobDesc {
+.welcome__jobDesc {
   margin-bottom: 1.5rem;
   display: flex;
   gap: 1rem;

@@ -43,69 +43,13 @@ body {
   font-weight: $font-weight-regular;
   line-height: $font-line-height-body;
   font-size: $font-size-body;
-  background-color: #3a4fcf;
-  color: $white-color;
+  background-color: $color-bodyBg;
+  color: $color-blue;
   margin: 0;
   min-height: 100vh;
-  font-family: $font-primary; // font-family: 'Inter', sans-serif;
+  font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  &::before {
-    @include respondMobileFirst(phone) {
-      content: "";
-      position: fixed;
-      height: 200px;
-      width: 200px;
-      background-color: rgb(0, 255, 255);
-      filter: blur(140px);
-      pointer-events: none;
-      z-index: -1;
-    }
-  }
-  &::after {
-    @include respondMobileFirst(phone) {
-      content: "";
-      position: fixed;
-      top: 200px;
-      left: 250px;
-      height: 200px;
-      width: 200px;
-      background-color: rgb(183, 0, 255);
-      filter: blur(140px);
-      pointer-events: none;
-      z-index: -1;
-    }
-  }
-}
-#root {
-  &::before {
-    @include respondMobileFirst(phone) {
-      content: "";
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 200px;
-      width: 200px;
-      background-color: rgb(0, 255, 255);
-      filter: blur(140px);
-      pointer-events: none;
-      z-index: -1;
-    }
-  }
-  &::after {
-    @include respondMobileFirst(phone) {
-      content: "";
-      position: fixed;
-      top: 200px;
-      right: 250px;
-      height: 200px;
-      width: 200px;
-      background-color: rgb(183, 0, 255);
-      filter: blur(140px);
-      pointer-events: none;
-      z-index: -1;
-    }
-  }
 }
 /* Make images easier to work with */
 img,

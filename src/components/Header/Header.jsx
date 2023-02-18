@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header id="home" className="header">
       <h1 aria-label="portfolio of mathieu, front end developer" tabIndex={0}>
-        {"<M/>"}
+        SCHAFF Mathieu
       </h1>
       <div className={"modal-menu"}>
         <div

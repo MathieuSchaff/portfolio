@@ -1,7 +1,7 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixins.scss";
 .work__item {
-  background-color: $color-blueTiffany;
+  background-color: $white-color;
   box-shadow: 0px 0px 20px -5px rgb(0 0 0 / 75%);
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -93,4 +93,5 @@
 }
 .info__description {
   margin-top: 1rem;
+  color: $dark-grey;
 }
