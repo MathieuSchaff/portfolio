@@ -28,10 +28,10 @@ const Skills = () => {
           idx={6}
         />
       </h2>
-      <motion.main className="skills__container">
+      <motion.section className="skills__container">
         {skills.map((skill, index) => {
           return (
-            <motion.div
+            <motion.article
               key={index}
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
@@ -41,10 +41,10 @@ const Skills = () => {
                 <img src={urlFor(skill.icon)} alt={skill.name} />
               </div>
               <p className="item__name">{skill.name}</p>
-            </motion.div>
+            </motion.article>
           );
         })}
-      </motion.main>
+      </motion.section>
     </div>
   );
 };
