@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 const Mywork = ({ work }) => {
   return (
-    <motion.div
+    <motion.article
       whileInView={{ opacity: [0, 1] }}
       transition={{ duration: 0.3 }}
       className="work__item"
@@ -59,7 +59,7 @@ const Mywork = ({ work }) => {
           );
         })}
       </div>
-    </motion.div>
+    </motion.article>
   );
 };
 

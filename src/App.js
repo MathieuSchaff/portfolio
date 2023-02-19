@@ -7,19 +7,16 @@ function App() {
   return (
     <div className="App">
       <Header />
+      {/* 
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="*" element={<Navigate replace to="/404" />} />
+      </Routes> */}
       <About />
       {/* <Skills /> */}
       <Work />
       {/* <Skills /> */}
       {/* <Contact /> */}
-      {/* <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="skills" element={<Skills />} />
-        <Route path="work" element={<Work />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="404" element={<NotFound />} />
-        <Route path="*" element={<Navigate replace to="/404" />} />
-      </Routes> */}
     </div>
   );
 }

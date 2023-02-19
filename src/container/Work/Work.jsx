@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Work.scss";
 import { client } from "../../client.js";
 import Mywork from "../../components/Mywork/Mywork.jsx";
-import { motion } from "framer-motion";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
 const Work = () => {
   const [works, setWorks] = useState([]);
@@ -22,7 +21,7 @@ const Work = () => {
     });
   }, []);
   return (
-    <div className="work">
+    <section className="work">
       <h2 className="work__title">
         <AnimatedLetters
           letterClass={letterClass}
@@ -30,14 +29,12 @@ const Work = () => {
           idx={9}
         />{" "}
       </h2>
-      <main>
-        <div className="work__container">
-          {works.map((work) => (
-            <Mywork key={work._id} work={work} />
-          ))}
-        </div>
-      </main>
-    </div>
+      <div className="work__container">
+        {works.map((work) => (
+          <Mywork key={work._id} work={work} />
+        ))}
+      </div>
+    </section>
   );
 };
 
