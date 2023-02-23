@@ -20,7 +20,7 @@ const Skills = () => {
     });
   }, []);
   return (
-    <div className="skills ">
+    <div className="skills" id="skills">
       <h2 className=" skills__title">
         <AnimatedLetters
           letterClass={letterClass}

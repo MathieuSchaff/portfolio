@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+import PortalNav from "./PortalNav";
 const Header = () => {
   const [isMenuClick, setIsMenuClicked] = React.useState(false);
 
@@ -18,54 +19,21 @@ const Header = () => {
         >
           <div></div>
         </div>
-        <nav
-          className={
-            isMenuClick ? "burger--nav burger--nav__clicked" : "burger--nav"
-          }
-        >
-          <ul className="burger--list">
-            <li className="burger--item">
-              <a href="#about" className="burger--link" onClick={toggleMenu}>
-                About
-              </a>
-            </li>
-            <li className="burger--item">
-              <a href="#skills" className="burger--link" onClick={toggleMenu}>
-                Skills
-              </a>
-            </li>
-            <li className="burger--item">
-              <a href="#projects" className="burger--link" onClick={toggleMenu}>
-                Projects
-              </a>
-            </li>
-            <li className="burger--item">
-              <a href="#contact" className="burger--link" onClick={toggleMenu}>
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
+        {isMenuClick && <PortalNav onClose={toggleMenu} />}
       </div>
-
       <nav className="header--nav__main">
         <ul className="header--nav__list">
-          <li className="header--nav__item">
-            <a href="#about" className="header--nav__link">
-              About
-            </a>
-          </li>
-          <li className="header--nav__item">
-            <a href="#skills" className="header--nav__link">
-              Skills
-            </a>
-          </li>
-          <li className="header--nav__item">
-            <a href="#projects" className="header--nav__link">
+          <li className="burger--item">
+            <a href="#projects" className="burger--link" onClick={toggleMenu}>
               Projects
             </a>
           </li>
-          <li className="header--nav__item">
+          <li className="burger--item">
+            <a href="#skills" className="burger--link" onClick={toggleMenu}>
+              Skills
+            </a>
+          </li>
+          <li className="burger--item">
             <a href="#contact" className="header--nav__link">
               Contact
             </a>

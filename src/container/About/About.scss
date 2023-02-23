@@ -8,12 +8,16 @@
   justify-content: space-between;
   margin-top: 5rem;
   align-items: center;
-  @include respondMobileFirst(phone) {
+  @media only screen and (min-width: 700px) {
     flex-direction: row;
   }
 }
+.about__text {
+  margin-top: 2.5rem;
+}
 .about__welcome {
   font-size: 3rem;
+  flex-basis: 50%;
 }
 .welcome {
   margin-bottom: 1.5rem;
@@ -22,27 +26,42 @@
   }
 }
 .welcome__portfolio {
-  font-size: 10rem;
+  font-size: 8rem;
   font-weight: 700;
   line-height: 5rem;
   margin-top: 3rem;
   font-family: $font-secondary;
+  @include respondMobileFirst(big-desktop) {
+    font-size: 10rem;
+  }
 }
 .welcome__jobDesc {
   margin-bottom: 1.5rem;
   display: flex;
   gap: 1rem;
 }
-.about__img {
-  max-width: 300px;
-  border-radius: 20px;
+.image__container {
   align-self: center;
   order: -1;
   margin-bottom: 2rem;
-  @include respondMobileFirst(phone) {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  background-color: $color-blue;
+  @media only screen and (min-width: 700px) {
     order: 1;
   }
 }
+.about__img {
+  border-radius: 50%;
+  height: 90%;
+}
+
 .whoIam__job {
   color: $white-color;
   font-size: 2rem;

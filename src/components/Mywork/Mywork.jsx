@@ -44,7 +44,17 @@ const Mywork = ({ work }) => {
           </motion.div>
         </div>
         <div className="work__info">
-          <h3 className="info__title">{work.title}</h3>
+          <div className="work__header">
+            <h3 className="info__title">{work.title}</h3>
+            <div className="work__phone__links">
+              <a href={work.projectLink}>
+                <AiFillEye />
+              </a>
+              <a href={work.codeLink}>
+                <AiFillGithub />
+              </a>
+            </div>
+          </div>
           <p className="info__description">{work.description}</p>
         </div>
       </div>

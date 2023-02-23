@@ -21,7 +21,7 @@ const Work = () => {
     });
   }, []);
   return (
-    <section className="work">
+    <section id="projects" className="work">
       <h2 className="work__title">
         <AnimatedLetters
           letterClass={letterClass}

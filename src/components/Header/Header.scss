@@ -67,9 +67,10 @@
   margin-top: 15px;
   position: absolute;
   display: none;
-  background-color: brown;
-  width: 200px;
+  color: $color-blue;
+  background-color: $white-color;
   right: 0;
+
   padding: 20px;
   border-radius: 5%;
 }
@@ -79,4 +80,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.portalModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: $white-color;
+  font-size: 3rem;
+}
+.burger--item {
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
