@@ -7,13 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* 
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="*" element={<Navigate replace to="/404" />} />
-      </Routes> */}
       <About />
-      {/* <Skills /> */}
       <Work />
       <Skills />
       {/* <Contact /> */}
