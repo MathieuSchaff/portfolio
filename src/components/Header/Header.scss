@@ -19,6 +19,9 @@
   &__list {
     display: flex;
     gap: 1.5rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: $color-tertiary;
   }
 }
 
@@ -50,9 +53,11 @@
 }
 .menu-open__clicked:before {
   transform: translateY(12px) rotate(135deg);
+  background-color: $color-tertiary;
 }
 .menu-open__clicked:after {
   transform: translateY(-12px) rotate(-135deg);
+  background-color: $color-tertiary;
 }
 .menu-open__clicked div {
   transform: scale(0);
@@ -70,7 +75,6 @@
   color: $color-blue;
   background-color: $white-color;
   right: 0;
-
   padding: 20px;
   border-radius: 5%;
 }
@@ -90,13 +94,12 @@
   bottom: 0;
   z-index: 1050;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   outline: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $color-tertiary;
   color: $white-color;
   font-size: 3rem;
+  display: flex;
+  justify-content: center;
 }
 .burger--item {
   padding: 1.5rem;
@@ -104,4 +107,21 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+.container__modal {
+  flex-direction: column;
+  padding: 4rem;
+  width: 80%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3rem;
+  margin-top: 8rem;
+  color: $color-tertiary;
+  // justify-content: space-around;
+  background-color: white;
+}
+.align-end {
+  align-items: flex-end;
 }

@@ -19,7 +19,9 @@ const About = () => {
             <p>Welcome to my</p>
             <p className="welcome__portfolio">Portfolio</p>
           </div>
-          <p className="about__text">I'm a Front End Developer, France.</p>{" "}
+          <p className="about__text">
+            I'm a Front End Developer, located in France.
+          </p>{" "}
           <p className="about__text">
             {" "}
             I'm passionate about web development and I'm always looking for new
