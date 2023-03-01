@@ -15,6 +15,6 @@
   cursor: pointer;
   &:hover {
     animation: rubberBand 1s;
-    color: #fff;
+    color: $color-blue;
   }
 }
