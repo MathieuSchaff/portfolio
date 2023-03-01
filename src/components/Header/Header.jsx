@@ -24,20 +24,20 @@ const Header = () => {
       <nav className="header--nav__main">
         <ul className="header--nav__list">
           <li className="burger--item">
-            <a href="#projects" className="burger--link" onClick={toggleMenu}>
+            <a href="#projects" className="burger--link">
               Projects
             </a>
           </li>
           <li className="burger--item">
-            <a href="#skills" className="burger--link" onClick={toggleMenu}>
+            <a href="#skills" className="burger--link">
               Skills
             </a>
           </li>
-          <li className="burger--item">
+          {/* <li className="burger--item">
             <a href="#contact" className="header--nav__link">
               Contact
             </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
