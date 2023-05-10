@@ -1,7 +1,6 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixins.scss";
 .work__item {
-  // background-color: $white-color;
   background-color: #fff;
   box-shadow: 0px 0px 20px -5px rgb(0 0 0 / 75%);
   border-radius: 0.5rem;
@@ -36,7 +35,7 @@
 }
 .tag__item {
   display: inline-block;
-  background-color: $color-tertiary;
+  background-color: $color-blue;
   padding: 0.4rem 1rem;
   border-radius: 2rem;
   color: $white-color;
@@ -87,17 +86,15 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: 1rem;
-  color: $white-color;
   font-size: 1.9rem;
 }
 .info__title {
   font-weight: 700;
   font-size: 2.1rem;
-  color: $color-tertiary;
+  color: $color-blue;
 }
 .info__description {
   margin-top: 1rem;
-  color: $color-blue;
   font-weight: 500;
 }
 .work__header {
@@ -112,6 +109,7 @@
   }
 }
 .work__phone__links {
+  display: flex;
   @include respondMobileFirst(phone) {
     display: none;
   }

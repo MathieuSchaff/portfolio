@@ -21,7 +21,7 @@
     gap: 1.5rem;
     font-size: 2rem;
     font-weight: 500;
-    color: $color-tertiary;
+    color: $color-blue;
   }
 }
 
@@ -43,7 +43,7 @@
 .menu-open:before,
 .menu-open:after,
 .menu-open div {
-  background: #fff;
+  background: $color-blue;
   content: "";
   display: block;
   height: 5px;
@@ -53,11 +53,11 @@
 }
 .menu-open__clicked:before {
   transform: translateY(12px) rotate(135deg);
-  background-color: $color-tertiary;
+  background-color: $color-blue;
 }
 .menu-open__clicked:after {
   transform: translateY(-12px) rotate(-135deg);
-  background-color: $color-tertiary;
+  background-color: $color-blue;
 }
 .menu-open__clicked div {
   transform: scale(0);
@@ -95,7 +95,7 @@
   z-index: 1050;
   overflow: hidden;
   outline: 0;
-  background-color: $color-bodyBg;
+  background-color: $white-color;
   color: $white-color;
   font-size: 3rem;
   display: flex;

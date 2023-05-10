@@ -28,11 +28,6 @@ function PortalNav({ onClose }) {
                   Skills
                 </a>
               </li>
-              {/* <li className="burger--item">
-                <a href="#contact" className="burger--link" onClick={onClose}>
-                  Contact
-                </a>
-              </li> */}
             </ul>
           </nav>
           <div></div>

@@ -1,7 +1,5 @@
 import "./App.scss";
-import { About, Skills, Contact, Work, NotFound } from "./container";
-import { Navbar } from "./components";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { About, Skills, Work } from "./container";
 import Header from "./components/Header/Header";
 function App() {
   return (
@@ -10,7 +8,6 @@ function App() {
       <About />
       <Work />
       <Skills />
-      {/* <Contact /> */}
     </div>
   );
 }
