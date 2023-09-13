@@ -2,7 +2,7 @@
 @import "./sass/variables";
 @import "animate.css";
 .App {
-  padding: 1% 3% 0 3%;
+  // padding: 1% 3% 0 3%;
   position: relative;
   max-width: 140rem;
   margin: auto;
@@ -12,4 +12,7 @@
   @include respondMobileFirst(tab-port) {
     // padding: 3% 10%;
   }
+}
+.container__content{
+padding: 1% 3% 0 3%;
 }
