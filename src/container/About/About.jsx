@@ -1,6 +1,5 @@
 import React from "react";
 import "./About.scss";
-import moi from "./moi.png";
 import myPicture from "./myPicture.png";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { AiOutlineTwitter } from "react-icons/ai";
@@ -16,8 +15,8 @@ const About = () => {
       >
         <div className="about__welcome">
           <div className="welcome">
-            <p>Welcome to my</p>
-            <p className="welcome__portfolio">Portfolio</p>
+            <p>Hi, I'm</p>
+            <p className="welcome__portfolio ">Mathieu S.</p>
           </div>
           <p className="about__text">
             I'm a Front End Developer, located in France.

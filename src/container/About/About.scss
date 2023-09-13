@@ -32,6 +32,7 @@
   font-weight: 700;
   line-height: 5rem;
   margin-top: 3rem;
+  color: $color-blue;
   font-family: $font-secondary;
   @include respondMobileFirst(big-desktop) {
     font-size: 10rem;
