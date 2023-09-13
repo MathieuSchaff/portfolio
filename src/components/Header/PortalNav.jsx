@@ -1,5 +1,7 @@
 import { createPortal } from "react-dom";
+import "./PortalNav.scss";
 import { motion, AnimatePresence } from "framer-motion";
+
 function PortalNav({ onClose }) {
   return createPortal(
     <AnimatePresence>
@@ -10,12 +12,6 @@ function PortalNav({ onClose }) {
         className="portalModal fade show"
       >
         <div className="container__modal">
-          <div
-            className={"menu-open menu-open__clicked align-end"}
-            onClick={onClose}
-          >
-            <div></div>
-          </div>
           <nav>
             <ul className="burger--list">
               <li className="burger--item">
