@@ -52,17 +52,17 @@
   background: $color-blue;
   content: "";
   display: block;
-  height: 5px;
+  height: 3px;
   border-radius: 3px;
-  margin: 7px 0;
+  margin: 4px 0;
   transition: 0.5s;
 }
 .menu-open__clicked:before {
-  transform: translateY(12px) rotate(135deg);
+  transform: translateY(8px) rotate(135deg);
   background-color: $color-blue;
 }
 .menu-open__clicked:after {
-  transform: translateY(-12px) rotate(-135deg);
+  transform: translateY(-7px) rotate(-135deg);
   background-color: $color-blue;
 }
 .menu-open__clicked div {
@@ -90,25 +90,6 @@
   justify-content: center;
   align-items: center;
 }
-//
-// .portalModal {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   z-index: 50;
-//   overflow: hidden;
-//   outline: 0;
-//   background-color: $white-color;
-//   color: $white-color;
-//   font-size: 3rem;
-//   display: flex;
-//   justify-content: center;
-//   @include respondMobileFirst(phone) {
-//     display: none;
-//   }
-// }
 .burger--item {
   padding: 1.5rem;
   transition: all 0.3s ease-in-out;
