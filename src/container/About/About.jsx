@@ -19,7 +19,7 @@ const About = () => {
             <p className="welcome__portfolio ">Mathieu S.</p>
           </div>
           <p className="about__text">
-            I'm a Front End Developer, located in France.
+            I'm a Web Developer, located in France.
           </p>{" "}
           <p className="about__text">
             {" "}
