@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Skills.scss";
 import skills from "../../data/skills";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
 
 const Skills = () => {
@@ -43,7 +43,8 @@ const Skills = () => {
               {filteredSkills.map((skill) => (
                 <motion.div
                   key={skill.id}
-                  whileInView={{ opacity: [0, 1], y: [20, 0] }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                   viewport={{ once: true }}
                   className="skill-item"

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import "./Work.scss";
-import projects from "../../data/projects";
-import Mywork from "../../components/Mywork/Mywork";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
+import Mywork from "../../components/Mywork/Mywork";
+import projects from "../../data/projects";
+import "./Work.scss";
 
 const Work = () => {
   const [letterClass, setLetterClass] = useState("text-animate");

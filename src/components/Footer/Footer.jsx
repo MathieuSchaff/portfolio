@@ -1,6 +1,5 @@
+import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import "./Footer.scss";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { AiOutlineTwitter } from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -23,7 +22,7 @@ const Footer = () => {
               rel="noreferrer"
               aria-label="LinkedIn"
             >
-              <BsLinkedin />
+              <FaLinkedinIn />
             </a>
           </li>
           <li>
@@ -33,17 +32,17 @@ const Footer = () => {
               rel="noreferrer"
               aria-label="GitHub"
             >
-              <BsGithub />
+              <FaGithub />
             </a>
           </li>
           <li>
             <a
-              href="https://twitter.com/MathSchaff"
+              href="https://x.com/MathSchaff"
               target="_blank"
               rel="noreferrer"
-              aria-label="Twitter"
+              aria-label="X (Twitter)"
             >
-              <AiOutlineTwitter />
+              <FaXTwitter />
             </a>
           </li>
         </ul>

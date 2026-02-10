@@ -1,11 +1,12 @@
 import "./Mywork.scss";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 
 const Mywork = ({ work }) => {
   return (
     <motion.article
-      whileInView={{ opacity: [0, 1], y: [40, 0] }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true, margin: "-50px" }}
       className="project-card"
@@ -21,7 +22,8 @@ const Mywork = ({ work }) => {
         </div>
 
         <motion.div
-          whileHover={{ opacity: [0, 1] }}
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
           transition={{ duration: 0.25, ease: "easeInOut" }}
           className="project-card__overlay"
         >
@@ -33,8 +35,9 @@ const Mywork = ({ work }) => {
             aria-label="View live project"
           >
             <motion.div
-              whileInView={{ scale: [0, 1] }}
-              whileHover={{ scale: [1, 0.9] }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              whileHover={{ scale: 0.9 }}
               transition={{ duration: 0.25 }}
             >
               <AiFillEye />
@@ -48,8 +51,9 @@ const Mywork = ({ work }) => {
             aria-label="View source code"
           >
             <motion.div
-              whileInView={{ scale: [0, 1] }}
-              whileHover={{ scale: [1, 0.9] }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              whileHover={{ scale: 0.9 }}
               transition={{ duration: 0.25 }}
             >
               <AiFillGithub />

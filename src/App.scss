@@ -1,8 +1,8 @@
-@import "./sass/variables";
-@import "./sass/mixins";
+@use "./sass/variables" as *;
+@use "./sass/mixins" as *;
 
 .App {
-  position: relative;
-  max-width: 140rem;
-  margin: auto;
+    position: relative;
+    max-width: 140rem;
+    margin: auto;
 }

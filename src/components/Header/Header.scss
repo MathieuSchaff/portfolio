@@ -1,135 +1,137 @@
-@import "../../sass/variables";
-@import "../../sass/mixins";
+@use "../../sass/variables" as *;
+@use "../../sass/mixins" as *;
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  transition: background-color $transition-base, box-shadow $transition-base;
-  background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition:
+        background-color $transition-base,
+        box-shadow $transition-base;
+    background-color: transparent;
 }
 
 .header--scrolled {
-  background-color: rgba(250, 249, 246, 0.92);
-  backdrop-filter: blur(12px);
-  box-shadow: $shadow-sm;
+    background-color: rgba(250, 249, 246, 0.92);
+    backdrop-filter: blur(12px);
+    box-shadow: $shadow-sm;
 }
 
 .header--menu-open {
-  background-color: $bg-primary;
+    background-color: $bg-primary;
 }
 
 .header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 7rem;
-  padding: 0 2rem;
-  max-width: 130rem;
-  margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    padding: 0 2rem;
+    max-width: 130rem;
+    margin: 0 auto;
 
-  @include respondMobileFirst(tab-port) {
-    padding: 0 4rem;
-    height: 8rem;
-  }
+    @include respondMobileFirst(tab-port) {
+        padding: 0 4rem;
+        height: 8rem;
+    }
 }
 
 .header__logo {
-  font-size: 2.8rem;
-  font-weight: $font-weight-bold;
-  color: $accent-navy;
-  font-family: $font-secondary;
-  letter-spacing: -1px;
-  transition: color $transition-fast;
+    font-size: 2.8rem;
+    font-weight: $font-weight-bold;
+    color: $accent-navy;
+    font-family: $font-secondary;
+    letter-spacing: -1px;
+    transition: color $transition-fast;
 
-  &:hover {
-    color: $accent-coral;
-  }
+    &:hover {
+        color: $accent-coral;
+    }
 }
 
 .header__logo-dot {
-  color: $accent-coral;
+    color: $accent-coral;
 }
 
 .header__nav {
-  display: none;
+    display: none;
 
-  @include respondMobileFirst(phone) {
-    display: block;
-  }
+    @include respondMobileFirst(phone) {
+        display: block;
+    }
 }
 
 .header__nav-list {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
 }
 
 .header__nav-link {
-  font-size: 1.5rem;
-  font-weight: $font-weight-medium;
-  color: $text-secondary;
-  position: relative;
-  padding: 0.5rem 0;
-  transition: color $transition-fast;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: $accent-coral;
-    transition: width $transition-base;
-    border-radius: 1px;
-  }
-
-  &:hover {
-    color: $accent-coral;
+    font-size: 1.5rem;
+    font-weight: $font-weight-medium;
+    color: $text-secondary;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color $transition-fast;
 
     &::after {
-      width: 100%;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $accent-coral;
+        transition: width $transition-base;
+        border-radius: 1px;
     }
-  }
+
+    &:hover {
+        color: $accent-coral;
+
+        &::after {
+            width: 100%;
+        }
+    }
 }
 
 .header__burger {
-  @include respondMobileFirst(phone) {
-    display: none;
-  }
+    @include respondMobileFirst(phone) {
+        display: none;
+    }
 }
 
 .menu-open {
-  display: block;
-  width: 30px;
-  cursor: pointer;
+    display: block;
+    width: 30px;
+    cursor: pointer;
 }
 
 .menu-open:before,
 .menu-open:after,
 .menu-open div {
-  background: $accent-navy;
-  content: "";
-  display: block;
-  height: 2px;
-  border-radius: 2px;
-  margin: 6px 0;
-  transition: $transition-base;
+    background: $accent-navy;
+    content: "";
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    margin: 6px 0;
+    transition: $transition-base;
 }
 
 .menu-open--active:before {
-  transform: translateY(8px) rotate(135deg);
-  background-color: $accent-coral;
+    transform: translateY(8px) rotate(135deg);
+    background-color: $accent-coral;
 }
 
 .menu-open--active:after {
-  transform: translateY(-8px) rotate(-135deg);
-  background-color: $accent-coral;
+    transform: translateY(-8px) rotate(-135deg);
+    background-color: $accent-coral;
 }
 
 .menu-open--active div {
-  transform: scale(0);
+    transform: scale(0);
 }

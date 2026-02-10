@@ -1,255 +1,256 @@
-@import "../../sass/variables";
-@import "../../sass/mixins";
+@use "sass:color";
+@use "../../sass/variables" as *;
+@use "../../sass/mixins" as *;
 
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10rem 2rem 4rem;
-  position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 2rem 4rem;
+    position: relative;
 
-  @include respondMobileFirst(tab-port) {
-    padding: 10rem 4rem 4rem;
-  }
+    @include respondMobileFirst(tab-port) {
+        padding: 10rem 4rem 4rem;
+    }
 }
 
 .hero__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  max-width: 120rem;
-  width: 100%;
-
-  @include respondMobileFirst(tab-port) {
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-  }
+    gap: 4rem;
+    max-width: 120rem;
+    width: 100%;
+
+    @include respondMobileFirst(tab-port) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .hero__text {
-  order: 2;
-  text-align: center;
+    order: 2;
+    text-align: center;
 
-  @include respondMobileFirst(tab-port) {
-    order: 1;
-    text-align: left;
-    flex: 1;
-    max-width: 60rem;
-  }
+    @include respondMobileFirst(tab-port) {
+        order: 1;
+        text-align: left;
+        flex: 1;
+        max-width: 60rem;
+    }
 }
 
 .hero__greeting {
-  display: inline-block;
-  font-size: 1.6rem;
-  font-weight: $font-weight-medium;
-  color: $accent-coral;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: $font-weight-medium;
+    color: $accent-coral;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .hero__name {
-  font-size: 5rem;
-  font-weight: $font-weight-bold;
-  color: $accent-navy;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  font-family: $font-secondary;
+    font-size: 5rem;
+    font-weight: $font-weight-bold;
+    color: $accent-navy;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-family: $font-secondary;
 
-  @include respondMobileFirst(phone) {
-    font-size: 6rem;
-  }
+    @include respondMobileFirst(phone) {
+        font-size: 6rem;
+    }
 
-  @include respondMobileFirst(tab-port) {
-    font-size: 7rem;
-  }
+    @include respondMobileFirst(tab-port) {
+        font-size: 7rem;
+    }
 }
 
 .hero__name--accent {
-  color: $accent-coral;
-  display: block;
+    color: $accent-coral;
+    display: block;
 }
 
 .hero__title {
-  font-size: 2.2rem;
-  font-weight: $font-weight-medium;
-  color: $accent-sage;
-  margin-bottom: 2.5rem;
+    font-size: 2.2rem;
+    font-weight: $font-weight-medium;
+    color: $accent-sage;
+    margin-bottom: 2.5rem;
 
-  @include respondMobileFirst(phone) {
-    font-size: 2.6rem;
-  }
+    @include respondMobileFirst(phone) {
+        font-size: 2.6rem;
+    }
 }
 
 .hero__description {
-  font-size: $font-size-body;
-  color: $text-secondary;
-  line-height: 1.8;
-  max-width: 50rem;
-  margin: 0 auto 3rem;
+    font-size: $font-size-body;
+    color: $text-secondary;
+    line-height: 1.8;
+    max-width: 50rem;
+    margin: 0 auto 3rem;
 
-  @include respondMobileFirst(tab-port) {
-    margin: 0 0 3rem;
-  }
+    @include respondMobileFirst(tab-port) {
+        margin: 0 0 3rem;
+    }
 }
 
 .hero__actions {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
 
-  @include respondMobileFirst(tab-port) {
-    justify-content: flex-start;
-  }
+    @include respondMobileFirst(tab-port) {
+        justify-content: flex-start;
+    }
 }
 
 .hero__cta {
-  display: inline-block;
-  padding: 1.2rem 3rem;
-  font-size: 1.5rem;
-  font-weight: $font-weight-semibold;
-  border-radius: $radius-sm;
-  transition: all $transition-base;
-  background-color: $accent-coral;
-  color: white;
-  border: 2px solid $accent-coral;
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    font-size: 1.5rem;
+    font-weight: $font-weight-semibold;
+    border-radius: $radius-sm;
+    transition: all $transition-base;
+    background-color: $accent-coral;
+    color: white;
+    border: 2px solid $accent-coral;
 
-  &:hover {
-    background-color: darken($accent-coral, 8%);
-    border-color: darken($accent-coral, 8%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
-  }
+    &:hover {
+        background-color: color.adjust($accent-coral, $lightness: -8%);
+        border-color: color.adjust($accent-coral, $lightness: -8%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
+    }
 }
 
 .hero__cta--outline {
-  background-color: transparent;
-  color: $accent-navy;
-  border-color: $accent-navy;
-
-  &:hover {
-    background-color: $accent-navy;
-    color: white;
+    background-color: transparent;
+    color: $accent-navy;
     border-color: $accent-navy;
-    box-shadow: 0 4px 15px rgba(61, 64, 91, 0.3);
-  }
+
+    &:hover {
+        background-color: $accent-navy;
+        color: white;
+        border-color: $accent-navy;
+        box-shadow: 0 4px 15px rgba(61, 64, 91, 0.3);
+    }
 }
 
 .hero__socials {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
 
-  @include respondMobileFirst(tab-port) {
-    justify-content: flex-start;
-  }
+    @include respondMobileFirst(tab-port) {
+        justify-content: flex-start;
+    }
 }
 
 .hero__social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: $radius-sm;
-  background-color: $accent-navy-light;
-  color: $accent-navy;
-  font-size: 2rem;
-  transition: all $transition-fast;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: $radius-sm;
+    background-color: $accent-navy-light;
+    color: $accent-navy;
+    font-size: 2rem;
+    transition: all $transition-fast;
 
-  &:hover {
-    background-color: $accent-coral;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
-  }
+    &:hover {
+        background-color: $accent-coral;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
+    }
 }
 
 .hero__visual {
-  order: 1;
+    order: 1;
 
-  @include respondMobileFirst(tab-port) {
-    order: 2;
-  }
+    @include respondMobileFirst(tab-port) {
+        order: 2;
+    }
 }
 
 .hero__avatar {
-  position: relative;
-  width: 22rem;
-  height: 22rem;
+    position: relative;
+    width: 22rem;
+    height: 22rem;
 
-  @include respondMobileFirst(phone) {
-    width: 26rem;
-    height: 26rem;
-  }
+    @include respondMobileFirst(phone) {
+        width: 26rem;
+        height: 26rem;
+    }
 
-  @include respondMobileFirst(tab-port) {
-    width: 32rem;
-    height: 32rem;
-  }
+    @include respondMobileFirst(tab-port) {
+        width: 32rem;
+        height: 32rem;
+    }
 }
 
 .hero__avatar-placeholder {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(135deg, $accent-coral, $accent-sand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $accent-coral, $accent-sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
 
-  span {
-    font-size: 6rem;
-    font-weight: $font-weight-bold;
-    color: white;
-    font-family: $font-secondary;
+    span {
+        font-size: 6rem;
+        font-weight: $font-weight-bold;
+        color: white;
+        font-family: $font-secondary;
 
-    @include respondMobileFirst(tab-port) {
-      font-size: 8rem;
+        @include respondMobileFirst(tab-port) {
+            font-size: 8rem;
+        }
     }
-  }
 }
 
 .hero__avatar-decoration {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 3px solid $accent-sage;
-  z-index: 1;
-  animation: float 4s ease-in-out infinite;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid $accent-sage;
+    z-index: 1;
+    animation: float 4s ease-in-out infinite;
 
-  @include respondMobileFirst(phone) {
-    top: -12px;
-    right: -12px;
-  }
+    @include respondMobileFirst(phone) {
+        top: -12px;
+        right: -12px;
+    }
 }
 
 .hero__scroll-indicator {
-  position: absolute;
-  bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: $text-muted;
-  transition: color $transition-fast;
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $text-muted;
+    transition: color $transition-fast;
 
-  &:hover {
-    color: $accent-coral;
-  }
+    &:hover {
+        color: $accent-coral;
+    }
 }
 
 .hero__scroll-icon {
-  font-size: 2.4rem;
-  animation: float 2s ease-in-out infinite;
+    font-size: 2.4rem;
+    animation: float 2s ease-in-out infinite;
 }

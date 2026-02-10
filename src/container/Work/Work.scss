@@ -1,50 +1,50 @@
-@import "../../sass/variables";
-@import "../../sass/mixins";
+@use "../../sass/variables" as *;
+@use "../../sass/mixins" as *;
 
 .work {
-  padding: $section-gap 2rem 4rem;
+    padding: $section-gap 2rem 4rem;
 
-  @include respondMobileFirst(tab-port) {
-    padding: $section-gap 4rem 4rem;
-  }
+    @include respondMobileFirst(tab-port) {
+        padding: $section-gap 4rem 4rem;
+    }
 }
 
 .work__title {
-  font-size: $font-heading-1;
-  font-weight: $font-weight-bold;
-  text-align: center;
-  color: $accent-navy;
-  margin-bottom: 1rem;
-
-  span {
+    font-size: $font-heading-1;
+    font-weight: $font-weight-bold;
+    text-align: center;
     color: $accent-navy;
-  }
+    margin-bottom: 1rem;
+
+    span {
+        color: $accent-navy;
+    }
 }
 
 .work__title-dot {
-  color: $accent-coral !important;
+    color: $accent-coral !important;
 }
 
 .work__subtitle {
-  text-align: center;
-  color: $text-muted;
-  font-size: $font-size-body;
-  margin-bottom: 5rem;
+    text-align: center;
+    color: $text-muted;
+    font-size: $font-size-body;
+    margin-bottom: 5rem;
 }
 
 .work__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  max-width: 120rem;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 120rem;
+    margin: 0 auto;
 
-  @include respondMobileFirst(phone) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    @include respondMobileFirst(phone) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-  @include respondMobileFirst(tab-land) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-  }
+    @include respondMobileFirst(tab-land) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
 }

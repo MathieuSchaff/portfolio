@@ -1,38 +1,32 @@
-import React from "react";
+import { Atom, Code2, Home, Mail } from "lucide-react";
 import "./Navbar.scss";
-import { NavLink } from "react-router-dom";
-import { AiOutlineHome, AiOutlineMail } from "react-icons/ai";
 
-import { BsCodeSlash } from "react-icons/bs";
-import { DiReact } from "react-icons/di";
 const Navbar = () => {
   return (
-    <>
-      <nav className="navBar" role="navigation" aria-label="Choose section">
-        <ul className="navBar__ul">
-          <li className="navBar__li">
-            <NavLink to="/" role="menuitem" end>
-              <AiOutlineHome className="icon" />
-            </NavLink>
-          </li>
-          <li className="navBar__li">
-            <NavLink to="/skills" aria-label="Skills" role="menuitem">
-              <DiReact className="icon" />
-            </NavLink>
-          </li>
-          <li className="navBar__li">
-            <NavLink to="/work" aria-label="Work" role="menuitem">
-              <BsCodeSlash className="icon" />
-            </NavLink>
-          </li>
-          <li className="navBar__li">
-            <NavLink to="/contact" aria-label="contact" role="menuitem">
-              <AiOutlineMail className="icon" />
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </>
+    <nav className="navBar" role="navigation" aria-label="Choose section">
+      <ul className="navBar__ul">
+        <li className="navBar__li">
+          <a href="#home" aria-label="Home">
+            <Home className="icon" />
+          </a>
+        </li>
+        <li className="navBar__li">
+          <a href="#skills" aria-label="Skills">
+            <Atom className="icon" />
+          </a>
+        </li>
+        <li className="navBar__li">
+          <a href="#projects" aria-label="Projects">
+            <Code2 className="icon" />
+          </a>
+        </li>
+        <li className="navBar__li">
+          <a href="#contact" aria-label="Contact">
+            <Mail className="icon" />
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 };
 

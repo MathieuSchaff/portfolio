@@ -1,3 +1,4 @@
+import { AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 import "./Header.scss";
 import PortalNav from "./PortalNav";
@@ -64,7 +65,9 @@ const Header = () => {
           </div>
         </div>
 
-        {isMenuClick && <PortalNav onClose={closeModal} />}
+        <AnimatePresence>
+          {isMenuClick && <PortalNav onClose={closeModal} />}
+        </AnimatePresence>
 
         <nav className="header__nav">
           <ul className="header__nav-list">
