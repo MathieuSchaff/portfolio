@@ -1,116 +1,135 @@
-@import "../../sass/variables.scss";
-@import "../../sass/mixins.scss";
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background-color $transition-base, box-shadow $transition-base;
+  background-color: transparent;
+}
+
+.header--scrolled {
+  background-color: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(12px);
+  box-shadow: $shadow-sm;
+}
+
+.header--menu-open {
+  background-color: $bg-primary;
+}
+
+.header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10rem;
+  height: 7rem;
   padding: 0 2rem;
-  h1 {
-    font-size: 3rem;
-    color: $color-blue;
-    font-weight: 500;
+  max-width: 130rem;
+  margin: 0 auto;
 
-    @include respondMobileFirst(phone) {
-      font-size: 2rem;
-    }
-  }
-}
-.header__clicked{
-  position: fixed;
-  width: 100%;
-  background-color: $white-color;
-}
-.header--nav {
-  &__list {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 2rem;
-    font-weight: 500;
-    color: $color-blue;
+  @include respondMobileFirst(tab-port) {
+    padding: 0 4rem;
+    height: 8rem;
   }
 }
 
-.header--nav__main {
+.header__logo {
+  font-size: 2.8rem;
+  font-weight: $font-weight-bold;
+  color: $accent-navy;
+  font-family: $font-secondary;
+  letter-spacing: -1px;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $accent-coral;
+  }
+}
+
+.header__logo-dot {
+  color: $accent-coral;
+}
+
+.header__nav {
   display: none;
+
   @include respondMobileFirst(phone) {
     display: block;
   }
 }
 
-.menu-open {
-  display: block;
-  width: 35px;
-  cursor: pointer;
+.header__nav-list {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.header__nav-link {
+  font-size: 1.5rem;
+  font-weight: $font-weight-medium;
+  color: $text-secondary;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color $transition-fast;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $accent-coral;
+    transition: width $transition-base;
+    border-radius: 1px;
+  }
+
+  &:hover {
+    color: $accent-coral;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.header__burger {
   @include respondMobileFirst(phone) {
     display: none;
   }
 }
+
+.menu-open {
+  display: block;
+  width: 30px;
+  cursor: pointer;
+}
+
 .menu-open:before,
 .menu-open:after,
 .menu-open div {
-  background: $color-blue;
+  background: $accent-navy;
   content: "";
   display: block;
-  height: 3px;
-  border-radius: 3px;
-  margin: 4px 0;
-  transition: 0.5s;
+  height: 2px;
+  border-radius: 2px;
+  margin: 6px 0;
+  transition: $transition-base;
 }
-.menu-open__clicked:before {
+
+.menu-open--active:before {
   transform: translateY(8px) rotate(135deg);
-  background-color: $color-blue;
+  background-color: $accent-coral;
 }
-.menu-open__clicked:after {
-  transform: translateY(-7px) rotate(-135deg);
-  background-color: $color-blue;
+
+.menu-open--active:after {
+  transform: translateY(-8px) rotate(-135deg);
+  background-color: $accent-coral;
 }
-.menu-open__clicked div {
+
+.menu-open--active div {
   transform: scale(0);
 }
-.modal-menu {
-  @include respondMobileFirst(phone) {
-    display: none;
-  }
-}
-.burger--nav {
-  margin-top: 15px;
-  position: absolute;
-  display: none;
-  color: $color-blue;
-  background-color: $white-color;
-  right: 0;
-  padding: 20px;
-  border-radius: 5%;
-}
-.burger--nav__clicked {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.burger--item {
-  padding: 1.5rem;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-// .container__modal {
-//   flex-direction: column;
-//   padding: 4rem;
-//   width: 80%;
-//   height: min-content;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border-radius: 3rem;
-//   margin-top: 8rem;
-//   color: $color-tertiary;
-//   // justify-content: space-around;
-//   background-color: white;
-// }
-// .align-end {
-//   align-self: flex-end;
-// }

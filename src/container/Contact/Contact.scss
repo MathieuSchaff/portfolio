@@ -1,53 +1,150 @@
 @import "../../sass/variables";
+@import "../../sass/mixins";
+
 .contact {
-  width: 100%;
-  margin-top: 20px;
-  padding: 2rem;
+  padding: $section-gap 2rem 6rem;
+
+  @include respondMobileFirst(tab-port) {
+    padding: $section-gap 4rem 6rem;
+  }
+}
+
+.contact__inner {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+.contact__title {
+  font-size: $font-heading-1;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  color: $accent-navy;
+  margin-bottom: 1rem;
+
+  span {
+    color: $accent-coral;
+  }
+}
+
+.contact__subtitle {
+  text-align: center;
+  color: $text-muted;
+  margin-bottom: 5rem;
+}
+
+.contact__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+
+  @include respondMobileFirst(tab-port) {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 6rem;
+  }
+}
+
+.contact__form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 2rem;
 }
 
-input,
-textarea {
-  margin: 1rem 0;
-}
-input[type="text"],
-input[type="email"] {
-  width: 100%;
-  border: 0;
-  background: $color-blue;
-  height: 50px;
-  font-size: 16px;
-  color: #fff;
-  padding: 0 20px;
-  box-sizing: border-box;
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  label {
+    font-size: $font-size-small;
+    font-weight: $font-weight-semibold;
+    color: $text-secondary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  input,
+  textarea {
+    padding: 1.4rem 1.6rem;
+    border: 2px solid $bg-secondary;
+    border-radius: $radius-sm;
+    font-size: $font-size-body;
+    font-family: $font-primary;
+    color: $text-primary;
+    background-color: $bg-card;
+    transition: border-color $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $accent-coral;
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 14rem;
+  }
 }
 
-textarea {
-  width: 100%;
-  border: 0;
-  background: $color-blue;
-  height: 50px;
-  font-size: 16px;
-  color: #fff;
-  padding: 20px;
-  box-sizing: border-box;
-  min-height: 150px;
+.contact__submit {
+  padding: 1.4rem 3rem;
+  background-color: $accent-coral;
+  color: white;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: 1.6rem;
+  font-weight: $font-weight-semibold;
+  font-family: $font-primary;
+  cursor: pointer;
+  transition: all $transition-base;
+  align-self: flex-start;
+
+  &:hover {
+    background-color: darken($accent-coral, 8%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
+  }
 }
 
-.flat-button {
-  color: #ffd700;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-decoration: none;
-  padding: 8px 10px;
-  border: 1px solid #ffd700;
-  float: left;
-  border-radius: 4px;
-  background: 0 0;
-  text-transform: uppercase;
-  float: right;
-  text-align: center;
-  margin-right: 10px;
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__info-text {
+  color: $text-secondary;
+  margin-bottom: 2rem;
+}
+
+.contact__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  li a {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem 2rem;
+    background-color: $bg-card;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-sm;
+    font-weight: $font-weight-medium;
+    color: $accent-navy;
+    transition: all $transition-fast;
+
+    svg {
+      font-size: 2rem;
+      color: $accent-coral;
+    }
+
+    &:hover {
+      transform: translateX(4px);
+      box-shadow: $shadow-md;
+    }
+  }
 }

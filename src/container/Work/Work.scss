@@ -1,52 +1,50 @@
-@import "../../sass/variables.scss";
-@import "../../sass/mixins.scss";
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
 .work {
-  margin: 10rem 0 1.5rem 0;
-  padding-top: 2rem;
-}
-.work__title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 2rem;
-  span {
-    color: $color-blue;
+  padding: $section-gap 2rem 4rem;
+
+  @include respondMobileFirst(tab-port) {
+    padding: $section-gap 4rem 4rem;
   }
 }
-.work__categories {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
+
+.work__title {
+  font-size: $font-heading-1;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  color: $accent-navy;
+  margin-bottom: 1rem;
+
+  span {
+    color: $accent-navy;
+  }
 }
+
+.work__title-dot {
+  color: $accent-coral !important;
+}
+
+.work__subtitle {
+  text-align: center;
+  color: $text-muted;
+  font-size: $font-size-body;
+  margin-bottom: 5rem;
+}
+
 .work__container {
   display: grid;
-  justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, 325px);
+  grid-template-columns: 1fr;
   gap: 3rem;
-  border-radius: 2rem;
-  margin-top: 2rem;
-  @media only screen and (min-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, 451px);
+  max-width: 120rem;
+  margin: 0 auto;
+
+  @include respondMobileFirst(phone) {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-.work--category.activeItem {
-  background-color: $four-color;
-  color: #fff;
-}
-.work__category {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  background-color: #fff;
-  color: #000;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0.5rem;
-  &:hover {
-    background-color: $four-color;
-    color: #fff;
+
+  @include respondMobileFirst(tab-land) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
   }
 }

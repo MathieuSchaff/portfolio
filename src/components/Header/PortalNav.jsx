@@ -9,28 +9,41 @@ function PortalNav({ onClose }) {
         initial={{ translateX: "100%", opacity: 0 }}
         animate={{ opacity: 1, translateX: 0 }}
         exit={{ opacity: 0 }}
-        className="portalModal fade show"
+        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+        className="portal-nav"
       >
-        <div className="container__modal">
-          <nav>
-            <ul className="burger--list">
-              <li className="burger--item">
-                <a href="#projects" className="burger--link" onClick={onClose}>
-                  Projects
-                </a>
-              </li>
-              <li className="burger--item">
-                <a href="#skills" className="burger--link" onClick={onClose}>
-                  Skills
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div></div>
-        </div>
+        <nav className="portal-nav__content">
+          <ul className="portal-nav__list">
+            <li>
+              <a href="#about" className="portal-nav__link" onClick={onClose}>
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="portal-nav__link"
+                onClick={onClose}
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#skills" className="portal-nav__link" onClick={onClose}>
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="portal-nav__link" onClick={onClose}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
       </motion.div>
     </AnimatePresence>,
     document.body
   );
 }
+
 export default PortalNav;

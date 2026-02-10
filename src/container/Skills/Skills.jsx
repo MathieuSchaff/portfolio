@@ -1,51 +1,64 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Skills.scss";
-import { urlFor, client } from "../../client";
+import skills from "../../data/skills";
 import { motion } from "framer-motion";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
-const Skills = () => {
-  const [skills, setSkills] = useState([]);
-  const [letterClass, setLetterClass] = useState("text-animate");
 
+const Skills = () => {
+  const [letterClass, setLetterClass] = useState("text-animate");
   const nameArray = ["S", "k", "i", "l", "l", "s"];
+
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLetterClass("text-animate-hover");
     }, 2000);
+    return () => clearTimeout(timer);
   }, []);
-  useEffect(() => {
-    const query = '*[_type == "skills"]';
-    client.fetch(query).then((data) => {
-      setSkills(data);
-    });
-  }, []);
+
+  const categories = [
+    { key: "frontend", label: "Frontend" },
+    { key: "backend", label: "Backend" },
+    { key: "tools", label: "Tools" },
+  ];
+
   return (
-    <div className="skills" id="skills">
-      <h2 className=" skills__title">
+    <section className="skills" id="skills">
+      <h2 className="skills__title">
         <AnimatedLetters
           letterClass={letterClass}
           strArray={nameArray}
           idx={6}
         />
+        <span className="skills__title-dot">.</span>
       </h2>
-      <motion.section className="skills__container">
-        {skills.map((skill, index) => {
-          return (
-            <motion.article
-              key={index}
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="skills__item"
-            >
-              <div className="item__icon">
-                <img src={urlFor(skill.icon)} alt={skill.name} />
-              </div>
-              <p className="item__name">{skill.name}</p>
-            </motion.article>
-          );
-        })}
-      </motion.section>
-    </div>
+      <p className="skills__subtitle">Technologies I work with</p>
+
+      {categories.map((cat) => {
+        const filteredSkills = skills.filter((s) => s.category === cat.key);
+        if (filteredSkills.length === 0) return null;
+        return (
+          <div className="skills__group" key={cat.key}>
+            <h3 className="skills__group-title">{cat.label}</h3>
+            <motion.div className="skills__grid">
+              {filteredSkills.map((skill) => (
+                <motion.div
+                  key={skill.id}
+                  whileInView={{ opacity: [0, 1], y: [20, 0] }}
+                  transition={{ duration: 0.4 }}
+                  viewport={{ once: true }}
+                  className="skill-item"
+                >
+                  <div className="skill-item__icon">
+                    <span>{skill.icon}</span>
+                  </div>
+                  <p className="skill-item__name">{skill.name}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        );
+      })}
+    </section>
   );
 };
 

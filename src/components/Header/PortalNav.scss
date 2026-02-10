@@ -1,46 +1,56 @@
-@import "../../sass/mixins.scss";
-@import "../../sass/variables.scss";
-.portalModal {
-  // position: absolute;
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.portal-nav {
   position: fixed;
-  // this will place the div at the bottom of its parent
-  top: 10rem;
+  top: 7rem;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
-  overflow: hidden;
-  outline: 0;
-  width: 100vw;
-  height: 100%;
-  background-color: $color-blue;
-  color: $white-color;
-  font-size: 3rem;
+  z-index: 99;
+  background-color: $bg-primary;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 6rem;
+
   @include respondMobileFirst(phone) {
     display: none;
   }
 }
-.burger--item {
-  padding: 1.5rem;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-.container__modal {
-  flex-direction: column;
-  padding: 4rem;
-  width: 80%;
-  height: min-content;
+
+.portal-nav__list {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 3rem;
-  margin-top: 8rem;
-  color: $white-color;
+  gap: 3rem;
 }
-.align-end {
-  align-self: flex-end;
+
+.portal-nav__link {
+  font-size: 2.8rem;
+  font-weight: $font-weight-semibold;
+  color: $accent-navy;
+  transition: color $transition-fast;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background-color: $accent-coral;
+    transition: width $transition-base;
+    border-radius: 2px;
+  }
+
+  &:hover {
+    color: $accent-coral;
+
+    &::after {
+      width: 60%;
+    }
+  }
 }

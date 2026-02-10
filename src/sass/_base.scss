@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+
 *,
 *::before,
 *::after {
@@ -7,53 +8,52 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 html {
   box-sizing: border-box;
-  font-size: 50%; // 1rem = 8px; 8/16 = 50%
-  /* root font-size to rem - correspond to 8px but not in px to authorize user to change default font size of his browser - 1rem = 10px; 10px/16px = 62.5% - 16px default size browser font*/
+  font-size: 50%;
   scroll-behavior: smooth;
+
   @include respondMobileFirst(tab-port) {
-    // width > 900 ?
-    // 1rem = 9px; 9/16 = 56.25%
     font-size: 56.25%;
   }
   @include respondMobileFirst(tab-land) {
-    // width  > 1200 ?
-    // 1rem = 10px; 10/16 = 62.5%;
     font-size: 62.5%;
   }
   @include respondMobileFirst(big-desktop) {
-    // width > 1800 ?
-    font-size: 75%; // 1rem = 12px; 12/16 = 75%
+    font-size: 75%;
   }
-}
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 li {
   list-style-type: none;
 }
+
 body {
   font-weight: $font-weight-regular;
   line-height: $font-line-height-body;
   font-size: $font-size-body;
-  background-color: $white-color;
-  color: $color-tertiary;
+  background-color: $bg-primary;
+  color: $text-primary;
   margin: 0;
   min-height: 100vh;
   font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Make images easier to work with */
+
 img,
 picture {
   max-width: 100%;
   display: block;
+}
+
+::selection {
+  background-color: $accent-coral;
+  color: white;
 }

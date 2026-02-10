@@ -1,103 +1,255 @@
-@import "../../sass/variables.scss";
-@import "../../sass/mixins.scss";
+@import "../../sass/variables";
+@import "../../sass/mixins";
 
-.about {
+.hero {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  animation: fade-in 0.3s ease-in-out forwards;
-  justify-content: space-between;
-  margin-top: 5rem;
-  align-items: center;
-  @media only screen and (min-width: 700px) {
-    flex-direction: row;
-  }
-}
-.about__text {
-  margin-top: 2.5rem;
-  line-height: 3rem;
-}
-.about__welcome {
-  font-size: 3rem;
-  flex-basis: 50%;
-}
-.welcome {
-  margin-bottom: 1.5rem;
-  color: $color-tertiary;
-  > p {
-    margin-bottom: 1.5rem;
-  }
-}
-.welcome__portfolio {
-  font-size: 8rem;
-  font-weight: 700;
-  line-height: 5rem;
-  margin-top: 3rem;
-  color: $color-blue;
-  font-family: $font-secondary;
-  @include respondMobileFirst(big-desktop) {
-    font-size: 10rem;
-  }
-}
-.welcome__jobDesc {
-  margin-bottom: 1.5rem;
-  display: flex;
-  gap: 1rem;
-}
-.image__container {
-  align-self: center;
-  order: -1;
-  margin-bottom: 2rem;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  display: flex;
   justify-content: center;
-  align-items: flex-end;
-  overflow: hidden;
-  width: 300px;
-  height: 300px;
-  @media only screen and (min-width: 700px) {
-    order: 1;
+  align-items: center;
+  padding: 10rem 2rem 4rem;
+  position: relative;
+
+  @include respondMobileFirst(tab-port) {
+    padding: 10rem 4rem 4rem;
   }
-}
-.about__img {
-  border-radius: 50%;
-  height: 80%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  object-position: center;
-  background-color: $color-blue;
 }
 
-.whoIam__job {
-  color: $white-color;
-  font-size: 2rem;
-}
-.socials--list {
+.hero__content {
   display: flex;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  max-width: 120rem;
+  width: 100%;
+
+  @include respondMobileFirst(tab-port) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.hero__text {
+  order: 2;
+  text-align: center;
+
+  @include respondMobileFirst(tab-port) {
+    order: 1;
+    text-align: left;
+    flex: 1;
+    max-width: 60rem;
+  }
+}
+
+.hero__greeting {
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: $font-weight-medium;
+  color: $accent-coral;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero__name {
+  font-size: 5rem;
+  font-weight: $font-weight-bold;
+  color: $accent-navy;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  font-family: $font-secondary;
 
   @include respondMobileFirst(phone) {
-    margin-top: 3rem;
+    font-size: 6rem;
   }
-  li {
-    background-color: $color-blue;
-    padding: 0.7rem 1rem;
-    border-radius: 12px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      opacity: 0.9;
-      transform: scale(0.9);
-    }
+
+  @include respondMobileFirst(tab-port) {
+    font-size: 7rem;
   }
-  a {
-    display: flex;
-    align-items: center;
+}
+
+.hero__name--accent {
+  color: $accent-coral;
+  display: block;
+}
+
+.hero__title {
+  font-size: 2.2rem;
+  font-weight: $font-weight-medium;
+  color: $accent-sage;
+  margin-bottom: 2.5rem;
+
+  @include respondMobileFirst(phone) {
+    font-size: 2.6rem;
+  }
+}
+
+.hero__description {
+  font-size: $font-size-body;
+  color: $text-secondary;
+  line-height: 1.8;
+  max-width: 50rem;
+  margin: 0 auto 3rem;
+
+  @include respondMobileFirst(tab-port) {
+    margin: 0 0 3rem;
+  }
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+
+  @include respondMobileFirst(tab-port) {
+    justify-content: flex-start;
+  }
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  font-size: 1.5rem;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-sm;
+  transition: all $transition-base;
+  background-color: $accent-coral;
+  color: white;
+  border: 2px solid $accent-coral;
+
+  &:hover {
+    background-color: darken($accent-coral, 8%);
+    border-color: darken($accent-coral, 8%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
+  }
+}
+
+.hero__cta--outline {
+  background-color: transparent;
+  color: $accent-navy;
+  border-color: $accent-navy;
+
+  &:hover {
+    background-color: $accent-navy;
     color: white;
-    svg {
-      margin-right: 0.5rem;
+    border-color: $accent-navy;
+    box-shadow: 0 4px 15px rgba(61, 64, 91, 0.3);
+  }
+}
+
+.hero__socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+
+  @include respondMobileFirst(tab-port) {
+    justify-content: flex-start;
+  }
+}
+
+.hero__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: $radius-sm;
+  background-color: $accent-navy-light;
+  color: $accent-navy;
+  font-size: 2rem;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: $accent-coral;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.3);
+  }
+}
+
+.hero__visual {
+  order: 1;
+
+  @include respondMobileFirst(tab-port) {
+    order: 2;
+  }
+}
+
+.hero__avatar {
+  position: relative;
+  width: 22rem;
+  height: 22rem;
+
+  @include respondMobileFirst(phone) {
+    width: 26rem;
+    height: 26rem;
+  }
+
+  @include respondMobileFirst(tab-port) {
+    width: 32rem;
+    height: 32rem;
+  }
+}
+
+.hero__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $accent-coral, $accent-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+
+  span {
+    font-size: 6rem;
+    font-weight: $font-weight-bold;
+    color: white;
+    font-family: $font-secondary;
+
+    @include respondMobileFirst(tab-port) {
+      font-size: 8rem;
     }
   }
+}
+
+.hero__avatar-decoration {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid $accent-sage;
+  z-index: 1;
+  animation: float 4s ease-in-out infinite;
+
+  @include respondMobileFirst(phone) {
+    top: -12px;
+    right: -12px;
+  }
+}
+
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $text-muted;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $accent-coral;
+  }
+}
+
+.hero__scroll-icon {
+  font-size: 2.4rem;
+  animation: float 2s ease-in-out infinite;
 }
