@@ -144,7 +144,7 @@
 
 .hero__socials {
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: center;
 
     @include respondMobileFirst(tab-port) {

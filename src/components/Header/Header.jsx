@@ -73,17 +73,17 @@ const Header = () => {
           <ul className="header__nav-list">
             <li>
               <a href="#about" className="header__nav-link">
-                About
+                À propos
               </a>
             </li>
             <li>
               <a href="#projects" className="header__nav-link">
-                Projects
+                Projets
               </a>
             </li>
             <li>
               <a href="#skills" className="header__nav-link">
-                Skills
+                Compétences
               </a>
             </li>
             <li>

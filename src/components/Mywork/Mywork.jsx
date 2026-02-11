@@ -1,7 +1,6 @@
-import "./Mywork.scss";
 import { motion } from "motion/react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
-
+import "./Mywork.scss";
 const Mywork = ({ work }) => {
   return (
     <motion.article

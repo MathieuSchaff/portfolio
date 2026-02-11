@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import "./About.scss";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { AiOutlineTwitter } from "react-icons/ai";
 import { HiArrowDown } from "react-icons/hi";
+import "./About.scss";
 
 const About = () => {
   return (
@@ -14,23 +13,26 @@ const About = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span className="hero__greeting">Hello, I'm</span>
+                  <span className="hero__greeting">
+                    Bonjour, je suis
+                  </span>
           <h1 className="hero__name">
             Mathieu <span className="hero__name--accent">Schaff</span>
           </h1>
-          <h2 className="hero__title">Web Developer</h2>
+                  <h2 className="hero__title">
+                    Développeur Web
+                  </h2>
           <p className="hero__description">
-            Based in France, I craft modern web experiences with clean code and
-            creative solutions. Passionate about building interfaces that are
-            both beautiful and performant.
+              Basé en France, je conçois des expériences web modernes avec du code propre et des solutions créatives.
+              Passionné par la création d'interfaces à la fois belles et performantes.
           </p>
 
           <div className="hero__actions">
             <a href="#projects" className="hero__cta">
-              View my work
+                          Voir mes réalisations
             </a>
             <a href="#contact" className="hero__cta hero__cta--outline">
-              Get in touch
+              Me contacter
             </a>
           </div>
 
@@ -55,17 +57,6 @@ const About = () => {
                 className="hero__social-link"
               >
                 <BsGithub />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/MathSchaff"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Twitter"
-                className="hero__social-link"
-              >
-                <AiOutlineTwitter />
               </a>
             </li>
           </ul>

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import "./Skills.scss";
-import skills from "../../data/skills";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
+import skills from "../../data/skills";
+import "./Skills.scss";
 
 const Skills = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
@@ -31,7 +31,9 @@ const Skills = () => {
         />
         <span className="skills__title-dot">.</span>
       </h2>
-      <p className="skills__subtitle">Technologies I work with</p>
+          <p className="skills__subtitle">
+            Technologies avec lesquelles je travaille
+          </p>
 
       {categories.map((cat) => {
         const filteredSkills = skills.filter((s) => s.category === cat.key);

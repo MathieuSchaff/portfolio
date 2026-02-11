@@ -1,9 +1,8 @@
-import { useRef, useState } from "react";
-import "./Contact.scss";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { AiOutlineTwitter } from "react-icons/ai";
+import "./Contact.scss";
 
 const Contact = () => {
   const form = useRef();
@@ -40,22 +39,21 @@ const Contact = () => {
         viewport={{ once: true }}
       >
         <h2 className="contact__title">
-          Get in <span>touch</span>
+          Prenons <span>contact</span>
         </h2>
         <p className="contact__subtitle">
-          Have a project in mind or just want to say hello? Feel free to reach
-          out.
+          Vous avez un projet en tête ou vous voulez simplement dire bonjour ? N'hésitez pas à me contacter.
         </p>
 
         <div className="contact__content">
           <form ref={form} onSubmit={sendEmail} className="contact__form">
             <div className="contact__field">
-              <label htmlFor="username">Name</label>
+              <label htmlFor="username">Nom</label>
               <input
                 type="text"
                 id="username"
                 name="username"
-                placeholder="Your name"
+                placeholder="Mon nom"
                 required
                 aria-required="true"
               />
@@ -66,7 +64,7 @@ const Contact = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder="mon@email.com"
                 required
                 aria-required="true"
               />
@@ -82,13 +80,13 @@ const Contact = () => {
               />
             </div>
             <button type="submit" className="contact__submit">
-              {sent ? "Sent!" : "Send message"}
+              {sent ? "C'est envoyé!" : "Envoyer"}
             </button>
           </form>
 
           <div className="contact__info">
             <p className="contact__info-text">
-              You can also find me on these platforms:
+                Vous pouvez également me retrouver sur ces plateformes :
             </p>
             <ul className="contact__socials">
               <li>
@@ -109,16 +107,6 @@ const Contact = () => {
                 >
                   <BsGithub />
                   <span>GitHub</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/MathSchaff"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiOutlineTwitter />
-                  <span>Twitter</span>
                 </a>
               </li>
             </ul>

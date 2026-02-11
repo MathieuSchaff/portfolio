@@ -1,6 +1,6 @@
+import { motion } from "motion/react";
 import { createPortal } from "react-dom";
 import "./PortalNav.scss";
-import { motion } from "motion/react";
 
 function PortalNav({ onClose }) {
   return createPortal(
@@ -15,17 +15,17 @@ function PortalNav({ onClose }) {
         <ul className="portal-nav__list">
           <li>
             <a href="#about" className="portal-nav__link" onClick={onClose}>
-              About
+              À propos
             </a>
           </li>
           <li>
             <a href="#projects" className="portal-nav__link" onClick={onClose}>
-              Projects
+              Projets
             </a>
           </li>
           <li>
             <a href="#skills" className="portal-nav__link" onClick={onClose}>
-              Skills
+              Compétences
             </a>
           </li>
           <li>

@@ -6,7 +6,7 @@ import "./Work.scss";
 
 const Work = () => {
   const [letterClass, setLetterClass] = useState("text-animate");
-  const nameArray = ["P", "r", "o", "j", "e", "c", "t", "s"];
+  const nameArray = ["P", "r", "o", "j", "e", "", "t", "s"];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,7 +26,7 @@ const Work = () => {
         <span className="work__title-dot">.</span>
       </h2>
       <p className="work__subtitle">
-        A selection of projects I've worked on recently
+        Une sélection de projets sur lesquels j'ai travaillé récemment
       </p>
       <div className="work__container">
         {projects.map((project) => (

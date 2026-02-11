@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import "./Footer.scss";
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
             M<span className="footer__logo-dot">.</span>S
           </span>
           <p className="footer__copyright">
-            &copy; {new Date().getFullYear()} Mathieu Schaff
+             {new Date().getFullYear()} Mathieu Schaff
           </p>
         </div>
 
@@ -33,16 +33,6 @@ const Footer = () => {
               aria-label="GitHub"
             >
               <FaGithub />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://x.com/MathSchaff"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="X (Twitter)"
-            >
-              <FaXTwitter />
             </a>
           </li>
         </ul>
