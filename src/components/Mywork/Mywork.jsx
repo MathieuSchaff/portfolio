@@ -1,73 +1,98 @@
-import React from "react";
 import "./Mywork.scss";
-import { urlFor } from "../../client.js";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
+
 const Mywork = ({ work }) => {
   return (
     <motion.article
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 0.3 }}
-      className="work__item"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="project-card"
     >
-      <div>
-        <div className="work__image">
-          <img src={urlFor(work.imgUrl)} alt={`${work.title} app`} />
-          <motion.div
-            whileHover={{ opacity: [0, 1] }}
-            transition={{
-              duration: 0.25,
-              ease: "easeInOut",
-              staggerChildren: 0.5,
-            }}
-            className="img__overlay"
+      <div className="project-card__image-wrapper">
+        <div
+          className="project-card__placeholder"
+          style={{ backgroundColor: work.color || "#e07a5f" }}
+        >
+          <span className="project-card__placeholder-text">
+            {work.title.charAt(0)}
+          </span>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+          className="project-card__overlay"
+        >
+          <a
+            href={work.projectLink}
+            target="_blank"
+            rel="noreferrer"
+            className="project-card__overlay-btn"
+            aria-label="View live project"
           >
-            <a href={work.projectLink}>
-              <motion.div
-                whileInView={{ scale: [0, 1] }}
-                whileHover={{ scale: [1, 0.9] }}
-                transition={{ duration: 0.25 }}
-                className="overlay__link"
-              >
-                <AiFillEye />
-              </motion.div>
-            </a>
-            <a href={work.codeLink}>
-              <motion.div
-                whileInView={{ scale: [0, 1] }}
-                whileHover={{ scale: [1, 0.9] }}
-                transition={{ duration: 0.25 }}
-              >
-                <AiFillGithub />
-              </motion.div>
-            </a>
-          </motion.div>
-        </div>
-        <div className="work__info">
-          <div className="work__header">
-            <h3 className="info__title">{work.title}</h3>
-            <div className="work__phone__links">
-              <a href={work.projectLink}>
-                <AiFillEye />
-              </a>
-              <a href={work.codeLink}>
-                <AiFillGithub />
-              </a>
-            </div>
-          </div>
-          <p className="info__description">{work.description}</p>
-        </div>
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              whileHover={{ scale: 0.9 }}
+              transition={{ duration: 0.25 }}
+            >
+              <AiFillEye />
+            </motion.div>
+          </a>
+          <a
+            href={work.codeLink}
+            target="_blank"
+            rel="noreferrer"
+            className="project-card__overlay-btn"
+            aria-label="View source code"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              whileHover={{ scale: 0.9 }}
+              transition={{ duration: 0.25 }}
+            >
+              <AiFillGithub />
+            </motion.div>
+          </a>
+        </motion.div>
       </div>
 
-      <div className="tag__container">
-        {work.tags.map((tag, index) => {
-          return (
-            <div className="tag__item" key={index}>
-              {" "}
-              {tag}
-            </div>
-          );
-        })}
+      <div className="project-card__body">
+        <div className="project-card__header">
+          <h3 className="project-card__title">{work.title}</h3>
+          <div className="project-card__links">
+            <a
+              href={work.projectLink}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View live project"
+            >
+              <AiFillEye />
+            </a>
+            <a
+              href={work.codeLink}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View source code"
+            >
+              <AiFillGithub />
+            </a>
+          </div>
+        </div>
+        <p className="project-card__description">{work.description}</p>
+      </div>
+
+      <div className="project-card__tags">
+        {work.tags.map((tag, index) => (
+          <span className="project-card__tag" key={index}>
+            {tag}
+          </span>
+        ))}
       </div>
     </motion.article>
   );

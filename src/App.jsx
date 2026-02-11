@@ -1,15 +1,19 @@
 import "./App.scss";
-import { About, Skills, Work } from "./container";
+import { About, Skills, Work, Contact } from "./container";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   return (
     <div className="App">
       <Header />
-      <div className="container__content">
+      <main>
         <About />
         <Work />
         <Skills />
-      </div>
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

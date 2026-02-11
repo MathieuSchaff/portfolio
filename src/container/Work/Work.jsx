@@ -1,25 +1,20 @@
-import React, { useEffect, useState } from "react";
-import "./Work.scss";
-import { client } from "../../client.js";
-import Mywork from "../../components/Mywork/Mywork.jsx";
+import { useEffect, useState } from "react";
 import AnimatedLetters from "../../components/AnimatedLetters/AnimatedLetters";
-const Work = () => {
-  const [works, setWorks] = useState([]);
-  const [letterClass, setLetterClass] = useState("text-animate");
+import Mywork from "../../components/Mywork/Mywork";
+import projects from "../../data/projects";
+import "./Work.scss";
 
-  const nameArray = ["P", "r", "o", "j", "e", "c", "t", "s", "."];
+const Work = () => {
+  const [letterClass, setLetterClass] = useState("text-animate");
+  const nameArray = ["P", "r", "o", "j", "e", "c", "t", "s"];
+
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLetterClass("text-animate-hover");
     }, 4000);
+    return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const query = '*[_type =="works"]';
-    client.fetch(query).then((data) => {
-      setWorks(data);
-    });
-  }, []);
   return (
     <section id="projects" className="work">
       <h2 className="work__title">
@@ -27,11 +22,15 @@ const Work = () => {
           letterClass={letterClass}
           strArray={nameArray}
           idx={9}
-        />{" "}
+        />
+        <span className="work__title-dot">.</span>
       </h2>
+      <p className="work__subtitle">
+        A selection of projects I've worked on recently
+      </p>
       <div className="work__container">
-        {works.map((work) => (
-          <Mywork key={work._id} work={work} />
+        {projects.map((project) => (
+          <Mywork key={project.id} work={project} />
         ))}
       </div>
     </section>
